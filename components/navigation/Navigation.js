@@ -211,16 +211,20 @@ const Navigation = ({active, shopNav}) => {
                 <div className="px-4 py-6 space-y-6">
                 {navigation.pages.map((page,id) => (
                     <div key={id} className="flow-root border-b-[1px] pb-5">
-                        <a href={page.href} className="block p-2 -m-2 text-2xl font-medium text-gray-900">
-                            {page.name}
-                        </a>
+                        <Link href = {page.href}>
+                            <a className="block p-2 -m-2 text-2xl font-medium text-gray-900">
+                                {page.name}
+                            </a>
+                        </Link>
                     </div>
                 ))}
                 {navigation.resources.map((resource,id) => (
                     <div key={id} className="flow-root">
-                    <a href={resource.href} className="block p-2 -m-2 text-sm font-medium text-gray-500">
-                        {resource.name}
-                    </a>
+                        <Link href = {resource.href}>
+                            <a className="block p-2 -m-2 text-sm font-medium text-gray-500">
+                                {resource.name}
+                            </a>
+                        </Link>
                     </div>
                 ))}
                 </div>

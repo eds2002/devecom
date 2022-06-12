@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from 'next/router'
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 function classNames(...classes) {
@@ -165,9 +166,11 @@ export default function ProductOverview() {
                             ·
                             </div>
                             <div className="flex ml-4">
-                                <a href="#reviews" className="text-xs font-medium text-black hover:text-gray-500">
-                                    See all {reviews.featured.length} reviews
-                                </a>
+                                <Link href = "#reviews">
+                                  <a className="text-xs font-medium text-black hover:text-gray-500">
+                                      See all {reviews.featured.length} reviews
+                                  </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

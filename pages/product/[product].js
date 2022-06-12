@@ -2,6 +2,7 @@ import {Announcement, FAQ, Navigation,ProductOverview, ProductSpecs, Reviews} fr
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 const ProductPage = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -43,10 +44,12 @@ const ProductPage = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <a href = "#" className = "absolute flex items-center justify-center w-32 mb-6 mr-6 bg-blue-200 shadow-xl h-14 rounded-xl">
-                  <span className = "text-sm font-medium">Back to top</span>
-                  <ArrowUpIcon className = "w-8 h-8 p-2 text-gray-900 "/>
-              </a>
+              <Link href = "#">
+                <a className = "absolute flex items-center justify-center w-32 mb-6 mr-6 bg-blue-200 shadow-xl h-14 rounded-xl">
+                    <span className = "text-sm font-medium">Back to top</span>
+                    <ArrowUpIcon className = "w-8 h-8 p-2 text-gray-900 "/>
+                </a>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

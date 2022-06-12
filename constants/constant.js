@@ -27,7 +27,7 @@ export const policies = [
 
 export const incentives = [
   {
-    name: 'Free shipping',
+    name: 'Easy to use',
     imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
     description: "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
   },

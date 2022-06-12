@@ -57,7 +57,7 @@ const cubed = () => {
                         viewport={{ once: false }}
                         transition={{delay:0.2}}
                     >
-                        The last lint roller you'll ever buy.
+                        The last lint roller you will ever buy.
                     </motion.h3>
                     <motion.p className = "text-2xl font-medium text-gray-300 mb-7"
                         initial={{ opacity: 0.2 }}

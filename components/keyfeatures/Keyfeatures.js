@@ -1,4 +1,5 @@
 import { incentives } from "../../constants/constant"
+import Image from "next/image"
 const Keyfeatures = () => {
   return (
     <div className = "bg-gray-100">
@@ -15,7 +16,7 @@ const Keyfeatures = () => {
                 <div key={incentive.name} className="text-center sm:flex sm:text-left lg:block lg:text-center">
                   <div className="sm:flex-shrink-0">
                     <div className="flow-root">
-                      <img className="w-16 h-16 mx-auto" src={incentive.imageSrc} alt="" />
+                      <Image className="w-16 h-16 mx-auto" src={incentive.imageSrc} alt="" layout = 'fill' />
                     </div>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">

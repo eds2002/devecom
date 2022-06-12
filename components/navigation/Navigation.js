@@ -2,6 +2,7 @@ import { SearchIcon, ShoppingBagIcon, MenuIcon, XIcon } from '@heroicons/react/o
 import { Menu, Popover, Transition,Dialog, Tab } from '@headlessui/react'
 import { Fragment, useState, useEffect } from 'react'
 import {Announcement, Shopnav} from '../'
+import Link from 'next/link'
 const products = [
     {
       id: 1,
@@ -88,9 +89,11 @@ const Navigation = ({active, shopNav}) => {
 
                     {/* Logo (lg+) */}
                     <div className="flex-1 text-center md:flex md:items-center">
-                        <a href="/">
-                            <span className="text-lg font-bold text-black">Logo</span>
-                        </a>
+                        <Link href = "/">
+                            <a>
+                                <span className="text-lg font-bold text-black">Logo</span>
+                            </a>
+                        </Link>
                     </div>
 
                     {/* Navigation */}
@@ -98,7 +101,9 @@ const Navigation = ({active, shopNav}) => {
 
                         {/* Links */}
                         {navigation.pages.map((page,id) => (
-                            <a href = {page.href} key = {id} className = "hidden md:block">{page.name}</a>
+                            <Link href = {page.href} key = {id}>
+                                <a className = "hidden md:block">{page.name}</a>
+                            </Link>
                         ))}
 
 
@@ -136,7 +141,9 @@ const Navigation = ({active, shopNav}) => {
                                                 />
                                                 <div className="flex-auto ml-4">
                                                 <h3 className="font-medium text-gray-900">
-                                                    <a href={product.href}>{product.name}</a>
+                                                    <Link href = "product.href">
+                                                        <a>{product.name}</a>
+                                                    </Link>
                                                 </h3>
                                                 <p className="text-gray-500">{product.color}</p>
                                                 </div>

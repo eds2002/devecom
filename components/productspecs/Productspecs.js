@@ -1,3 +1,4 @@
+import Image from "next/image"
 const Productspecs = () => {
   return (
     <div>
@@ -17,10 +18,11 @@ const Productspecs = () => {
                 <div className="grid grid-cols-1 mt-16 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
                     <div>
                         <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <img
+                            <Image
                             src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg"
                             alt="Drawstring top with elastic loop closure and textured interior padding."
                             className="object-cover object-center w-full h-full"
+                            layout = 'fill'
                             />
                         </div>
                         <p className="mt-8 text-base text-gray-500">
@@ -30,10 +32,11 @@ const Productspecs = () => {
                     </div>
                     <div>
                         <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <img
+                            <Image
                             src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-02.jpg"
                             alt="Front zipper pouch with included key ring."
                             className="object-cover object-center w-full h-full"
+                            layout = 'fill'
                             />
                         </div>
                         <p className="mt-8 text-base text-gray-500">
@@ -43,10 +46,11 @@ const Productspecs = () => {
                     </div>
                     <div>
                         <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <img
+                            <Link
                             src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-02.jpg"
                             alt="Front zipper pouch with included key ring."
                             className="object-cover object-center w-full h-full"
+                            layout = 'fill'
                             />
                         </div>
                         <p className="mt-8 text-base text-gray-500">

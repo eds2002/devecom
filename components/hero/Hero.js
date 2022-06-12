@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/outline"
+import Link from "next/link"
 const Hero = () => {
   return (
     <div className="mx-auto px-4 w-full h-[100vh] flex items-center justify-center relative overflow-hidden">
@@ -14,18 +15,19 @@ const Hero = () => {
             </p>
             <div className="w-full mt-5 md:max-w-md sm:flex sm:justify-center md:mt-8">
                 <div className="flex items-center justify-start flex-1 w-full rounded-md gap-x-3">
-                    <a
-                        href="/product/cubed"
-                        className="relative flex max-w-[250px] items-center justify-center w-full px-20 py-2 text-base font-medium text-black bg-blue-200 border border-transparent rounded-md hover:bg-blue-300 md:text-lg transition active:bg-blue-200"
-                    >
-                        Shop now
-                        <span className = "absolute right-0 flex items-center justify-center px-5 font-bold">
-                            <ChevronRightIcon className = "w-5 h-5 flex-nowrap"/>
-                        </span>
-                    </a>
-                    <a href = "/cubed"className = "flex items-center justify-center transition hover:text-gray-300">
-                        Learn more
-                    </a>
+                    <Link href = "/product/cubed">
+                        <a className="relative flex max-w-[250px] items-center justify-center w-full px-20 py-2 text-base font-medium text-black bg-blue-200 border border-transparent rounded-md hover:bg-blue-300 md:text-lg transition active:bg-blue-200">
+                            Shop now
+                            <span className = "absolute right-0 flex items-center justify-center px-5 font-bold">
+                                <ChevronRightIcon className = "w-5 h-5 flex-nowrap"/>
+                            </span>
+                        </a>
+                    </Link>
+                    <Link href = "/cubed">
+                        <a className = "flex items-center justify-center transition hover:text-gray-300">
+                            Learn more
+                        </a>
+                    </Link>
                 </div>
             </div>
         </div>

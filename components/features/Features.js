@@ -1,5 +1,6 @@
 import { features } from "../../constants/constant"
 import Image from 'next/image'
+import Link from "next/link"
 const Features = () => {
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -31,13 +32,16 @@ const Features = () => {
                         <h3 className="text-lg font-bold text-gray-900 lg:text-3xl">{feature.name}</h3>
                         <p className="mt-2 text-sm text-gray-500">{feature.description}</p>
                         <div className = "flex flex-col items-center gap-3 my-8 lg:items-center lg:flex-row md:justify-start">
-                            <a
-                            href="#"
-                            className="w-full px-8 py-2 text-sm font-medium text-center text-gray-900 bg-blue-200 rounded-md md:text-base hover:bg-blue-300 lg:w-auto active:bg-blue-200"
-                            >
-                                Shop now
-                            </a>
-                            <a href = "/cubed" className = "text-xs sm:text-[15px] text-gray-600 cursor-pointer">Learn more</a>
+                            <Link href="#">
+                                <a className="w-full px-8 py-2 text-sm font-medium text-center text-gray-900 bg-blue-200 rounded-md md:text-base hover:bg-blue-300 lg:w-auto active:bg-blue-200">
+                                    Shop now
+                                </a>
+                            </Link>
+                            <Link href = "/cubed" >
+                                <a className = "text-xs sm:text-[15px] text-gray-600 cursor-pointer">
+                                    Learn more
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { CheckIcon, QuestionMarkCircleIcon, StarIcon } from '@heroicons/react/solid'
 import { RadioGroup } from '@headlessui/react'
 import { ShieldCheckIcon } from '@heroicons/react/outline'
+import Image from "next/image"
 const product = {
     name: 'Cubed bottle',
     href: '#',
@@ -26,7 +27,7 @@ const Product = () => {
   }
   
   return (
-    <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+    <div className="max-w-2xl px-4 py-16 mx-auto sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
         {/* Product details */}
         <div className="lg:max-w-lg lg:self-end">
           <div className="mt-4">
@@ -41,7 +42,7 @@ const Product = () => {
             <div className="flex items-center">
               <p className="text-lg text-gray-900 sm:text-xl">{product.price}</p>
 
-              <div className="ml-4 pl-4 border-l border-gray-300">
+              <div className="pl-4 ml-4 border-l border-gray-300">
                 <h2 className="sr-only">Reviews</h2>
                 <div className="flex items-center">
                   <div>
@@ -68,7 +69,7 @@ const Product = () => {
               <p className="text-base text-gray-500">{product.description}</p>
             </div>
 
-            <div className="mt-6 flex items-center">
+            <div className="flex items-center mt-6">
               <CheckIcon className="flex-shrink-0 w-5 h-5 text-green-500" aria-hidden="true" />
               <p className="ml-2 text-sm text-gray-500">In stock and ready to ship</p>
             </div>
@@ -77,8 +78,8 @@ const Product = () => {
 
         {/* Product image */}
         <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
-          <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-            <img src={product.imageSrc} alt={product.imageAlt} className="w-full h-full object-center object-cover" />
+          <div className="overflow-hidden rounded-lg aspect-w-1 aspect-h-1">
+            <Image src={product.imageSrc} alt={product.imageAlt} layout = 'fill' className="object-cover object-center w-full h-full" />
           </div>
         </div>
 
@@ -94,7 +95,7 @@ const Product = () => {
                 {/* Size selector */}
                 <RadioGroup value={selectedColor} onChange={setSelectedColor}>
                   <RadioGroup.Label className="block text-sm font-medium text-gray-700">Color</RadioGroup.Label>
-                  <div className="mt-1 grid grid-cols-2 gap-4 sm:grid-cols-2">
+                  <div className="grid grid-cols-2 gap-4 mt-1 sm:grid-cols-2">
                     {product.sizes.map((size) => (
                       <RadioGroup.Option
                         as="div"
@@ -130,16 +131,16 @@ const Product = () => {
                   </div>
                 </RadioGroup>
               </div>
-              <div className="mt-10 flex flex-col gap-y-3">
+              <div className="flex flex-col mt-10 gap-y-3">
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                  className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
                 >
                   Add to bag
                 </button>
                 <button
                   type="submit"
-                  className="w-full bg-gray-900 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-500"
+                  className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-gray-900 border border-transparent rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-500"
                 >
                   Buy now
                 </button>

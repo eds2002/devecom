@@ -34,7 +34,7 @@ const Testimonials = () => {
 
             <Slider {...settings}>
                 {UserTestimonials.map((review,id)=>(
-                    <div className = "flex w-full ">
+                    <div className = "flex w-full " key = {id}>
                         <div className = "flex flex-col items-center justify-center w-full max-w-2xl px-4 mx-auto my-10 sm:px-6 lg:max-w-7xl lg:px-8" key = {id}>
                             <span className="inline-block w-20 h-20 overflow-hidden bg-gray-100 rounded-full">
                                 <svg className="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">

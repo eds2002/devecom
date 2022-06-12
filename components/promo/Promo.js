@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 const Promo = () => {
   return (
     <div className="py-24 bg-white">
@@ -19,13 +20,14 @@ const Promo = () => {
                             A waterproof collar thats on with a single click.
                         </h2>
                         <div className = "flex flex-col items-center w-full gap-3 my-8 sm:justify-start sm:flex-row ">
-                            <a
-                            href="#"
-                            className="w-full px-8 py-3 text-sm font-medium text-center text-gray-900 bg-blue-200 rounded-md md:text-base hover:bg-blue-300 sm:w-auto active:bg-blue-200 "
-                            >
-                                Buy Cubed.
-                            </a>
-                            <a  href = "/cubed" className = "text-sm text-white cursor-pointer">Learn more.</a>
+                            <Link href = "#">
+                                <a className="w-full px-8 py-3 text-sm font-medium text-center text-gray-900 bg-blue-200 rounded-md md:text-base hover:bg-blue-300 sm:w-auto active:bg-blue-200 ">
+                                    Buy Cubed.
+                                </a>
+                            </Link>
+                            <Link href = "/cubed">
+                                <a className = "text-sm text-white cursor-pointer">Learn more.</a>
+                            </Link>
                         </div>
                     </div>
                 </div>

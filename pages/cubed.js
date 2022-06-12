@@ -8,7 +8,7 @@ const cubed = () => {
         <Navigation shopNav = 'true'/>
         <section className = "h-[85vh] bg-white top-[152px] relative flex justify-center items-center">
             <div className = "flex items-center h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <h1 class="font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                <h1 className="font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                     Cubed. The gadget that does not exist.
                 </h1>
             </div>

@@ -2,8 +2,8 @@ import { ChevronRightIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 const Hero = () => {
   return (
-    <div className="mx-auto px-4 w-full h-[100vh] flex items-center justify-center relative overflow-hidden max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className = "flex flex-col items-start justify-center w-full h-full pb-20 pl-10 mt-[104px] absolute inset-0 z-10">
+    <div className="mx-auto  w-full h-[100vh] flex items-center justify-center relative overflow-hidden max-w-2xl lg:max-w-7xl lg:px-8">
+        <div className = "flex flex-col items-start justify-center w-full h-full pb-20 mt-[104px] absolute inset-0 z-10 px-4">
             <span className = "px-2 mb-3 text-sm font-medium text-gray-900 border-2 border-black rounded-full">Now 15% Off.</span>
             <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl md:text-6xl">
                 <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> Stylish </span>

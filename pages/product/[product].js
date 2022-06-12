@@ -1,4 +1,4 @@
-import {Announcement, FAQ, Navigation,ProductOverview, ProductSpecs, Reviews} from '../../components'
+import {Announcement, Faq, Navigation,ProductOverview, ProductSpecs, Reviews} from '../../components'
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpIcon } from '@heroicons/react/outline';
@@ -34,7 +34,7 @@ const ProductPage = () => {
         <Navigation/>
         <ProductOverview/>
         <ProductSpecs/>
-        <FAQ/>
+        <Faq/>
         <Reviews/>
         <AnimatePresence>
           {popup && (

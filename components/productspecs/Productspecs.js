@@ -47,7 +47,7 @@ const Productspecs = () => {
                     </div>
                     <div>
                         <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <Link
+                            <Image
                             src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-02.jpg"
                             alt="Front zipper pouch with included key ring."
                             className="object-cover object-center w-full h-full"

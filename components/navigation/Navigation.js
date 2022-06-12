@@ -101,7 +101,7 @@ const Navigation = ({active, shopNav}) => {
 
                         {/* Links */}
                         {navigation.pages.map((page,id) => (
-                            <Link href = {page.href} key = {id}>
+                            <Link href = {page.href ?? ''} key = {id}>
                                 <a className = "hidden md:block">{page.name}</a>
                             </Link>
                         ))}
@@ -209,24 +209,26 @@ const Navigation = ({active, shopNav}) => {
 
                 {/* Links */}
                 <div className="px-4 py-6 space-y-6">
-                {navigation.pages.map((page,id) => (
-                    <div key={id} className="flow-root border-b-[1px] pb-5">
-                        <Link href = {page.href}>
-                            <a className="block p-2 -m-2 text-2xl font-medium text-gray-900">
-                                {page.name}
-                            </a>
-                        </Link>
-                    </div>
-                ))}
-                {navigation.resources.map((resource,id) => (
-                    <div key={id} className="flow-root">
-                        <Link href = {resource.href}>
-                            <a className="block p-2 -m-2 text-sm font-medium text-gray-500">
-                                {resource.name}
-                            </a>
-                        </Link>
-                    </div>
-                ))}
+                    {navigation.pages.map((page,id) => (
+                        <div key={id} className="flow-root border-b-[1px] pb-5">
+                            <Link href = {page.href ?? ''}>
+                                <a className="block p-2 -m-2 text-2xl font-medium text-gray-900">
+                                    {page.name}
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+                <div>
+                    {navigation.resources.map((resource,id) => (
+                        <div key={id} className="flow-root">
+                            <Link href = {resource.href ?? ''}>
+                                <a className="block p-2 -m-2 text-sm font-medium text-gray-500">
+                                    {resource.name}
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
                 </div>
             </Dialog.Panel>
             </Transition.Child>

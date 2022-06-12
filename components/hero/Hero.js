@@ -2,7 +2,7 @@ import { ChevronRightIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 const Hero = () => {
   return (
-    <div className="mx-auto px-4 w-full h-[100vh] flex items-center justify-center relative overflow-hidden">
+    <div className="mx-auto px-4 w-full h-[100vh] flex items-center justify-center relative overflow-hidden max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
         <div className = "flex flex-col items-start justify-center w-full h-full pb-20 pl-10 mt-[104px] absolute inset-0 z-10">
             <span className = "px-2 mb-3 text-sm font-medium text-gray-900 border-2 border-black rounded-full">Now 15% Off.</span>
             <h1 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl md:text-6xl">
@@ -16,9 +16,9 @@ const Hero = () => {
             <div className="w-full mt-5 md:max-w-md sm:flex sm:justify-center md:mt-8">
                 <div className="flex items-center justify-start flex-1 w-full rounded-md gap-x-3">
                     <Link href = "/product/cubed">
-                        <a className="relative flex max-w-[250px] items-center justify-center w-full px-20 py-2 text-base font-medium text-black bg-blue-200 border border-transparent rounded-md hover:bg-blue-300 md:text-lg transition active:bg-blue-200">
-                            Shop now
-                            <span className = "absolute right-0 flex items-center justify-center px-5 font-bold">
+                        <a className="relative flex w-[150px] sm:w-[250px] items-center justify-center py-2 text-base font-medium text-black bg-blue-200 border border-transparent rounded-md hover:bg-blue-300 md:text-lg transition active:bg-blue-200">
+                            <p className = "whitespace-nowrap">Shop now</p>
+                            <span className = "absolute right-0 flex items-center justify-center pr-3 font-bold">
                                 <ChevronRightIcon className = "w-5 h-5 flex-nowrap"/>
                             </span>
                         </a>

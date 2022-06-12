@@ -1,4 +1,4 @@
-import {Announcement, Navigation,Hero, Features, Product, Promo, KeyFeatures, Testimonials} from '../components/index'
+import {Announcement, Navigation,Hero, Features, Product, Promo, KeyFeatures, Testimonials,Footer} from '../components/index'
 import Head from 'next/head'
 const footerNavigation = {
   products: [
@@ -49,6 +49,7 @@ export default function Home() {
         <Features/>
         <Promo/> 
         <Testimonials/>
+        <Footer/>
     </main>
   )
 }

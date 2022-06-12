@@ -115,19 +115,19 @@ const Navigation = ({active, shopNav}) => {
                                         className="flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-500"
                                         aria-hidden="true"
                                     />
-                                    <span className="ml-1 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                    {/* <span className="w-5 h-5 text-sm font-medium text-white bg-gray-500 rounded-full group-hover:text-white">0</span> */}
                                     <span className="sr-only">items in cart, view bag</span>
                                 </Popover.Button>
                                 <Transition
-                                as={Fragment}
-                                enter="transition ease-out duration-200"
-                                enterFrom="opacity-0"
-                                enterTo="opacity-100"
-                                leave="transition ease-in duration-150"
-                                leaveFrom="opacity-100"
-                                leaveTo="opacity-0"
+                                    as={Fragment}
+                                    enter="transition ease-out duration-200"
+                                    enterFrom="opacity-0"
+                                    enterTo="opacity-100"
+                                    leave="transition ease-in duration-150"
+                                    leaveFrom="opacity-100"
+                                    leaveTo="opacity-0"
                                 >
-                                    <Popover.Panel className="absolute top-14 lg:top-8 inset-x-0 mt-px pb-6 bg-white shadow-lg sm:px-2  lg:left-auto lg:right-0 lg:mt-3 lg:-mr-1.5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-10">
+                                    <Popover.Panel className="absolute top-24 lg:top-8 inset-x-0 mt-px pb-6 bg-white shadow-lg sm:px-2  lg:left-auto lg:right-0 lg:mt-3 lg:-mr-1.5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-10">
                                         <h2 className="sr-only">Shopping Cart</h2>
 
                                         <form className="max-w-2xl px-4 mx-auto">
@@ -153,7 +153,7 @@ const Navigation = ({active, shopNav}) => {
 
                                         <button
                                             type="submit"
-                                            className="w-full px-4 py-2 text-sm font-medium text-white bg-gray-900 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-gray-500"
+                                            className="w-full px-4 py-2 text-sm font-medium text-white text-gray-900 bg-blue-200 border border-transparent rounded-md shadow-sm hover:bg-blue-300 focus:outline-none ring-offset-2 focus:ring-blue-200 focus:ring-2"
                                         >
                                             Checkout
                                         </button>
@@ -197,14 +197,14 @@ const Navigation = ({active, shopNav}) => {
             >
             <Dialog.Panel className="relative flex flex-col w-full max-w-xs pb-12 overflow-y-auto bg-white shadow-xl">
                 <div className="flex px-4 pt-5 pb-2">
-                <button
-                    type="button"
-                    className="inline-flex items-center justify-center p-2 -m-2 text-gray-400 rounded-md"
-                    onClick={() => setOpen(false)}
-                >
-                    <span className="sr-only">Close menu</span>
-                    <XIcon className="w-6 h-6" aria-hidden="true" />
-                </button>
+                    <button
+                        type="button"
+                        className="inline-flex items-center justify-center p-2 -m-2 text-gray-400 rounded-md"
+                        onClick={() => setOpen(false)}
+                    >
+                        <span className="sr-only">Close menu</span>
+                        <XIcon className="w-6 h-6" aria-hidden="true" />
+                    </button>
                 </div>
 
                 {/* Links */}
@@ -219,7 +219,7 @@ const Navigation = ({active, shopNav}) => {
                         </div>
                     ))}
                 </div>
-                <div>
+                <div className = "px-4">
                     {navigation.resources.map((resource,id) => (
                         <div key={id} className="flow-root">
                             <Link href = {resource.href ?? ''}>

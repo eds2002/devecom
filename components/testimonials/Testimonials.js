@@ -24,12 +24,12 @@ const Testimonials = () => {
 
         <div className="relative max-w-2xl px-4 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className = "flex flex-col items-center justify-center">
-                <h1 className = "text-xl font-bold text-center sm:text-4xl">
+                <h1 className = "text-3xl font-bold text-center sm:text-4xl">
                     Take a look at what our
                     <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> customers </span>
                     have to say.
                 </h1>
-                <p className = "max-w-xl my-3 text-lg text-center text-gray-500">We value our customers and appreciate hearing how we can improve and better support you in the future.</p>
+                <p className = "max-w-xs my-3 text-sm text-center text-gray-500 sm:max-w-lg sm:text-md md:text-lg lg:text-xl">We value our customers and appreciate hearing how we can improve and better support you in the future.</p>
             </div>
 
             <Slider {...settings}>

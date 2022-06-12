@@ -46,23 +46,23 @@ export const incentives = [
 
 export const features = [
   {
-    name: 'Minimal and thoughtful',
+    name: 'Reusable rollers are the future',
     description:
-      'Our laptop sleeve is compact and precisely fits 13" devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.',
+      'Our pet hair roller is reusable with the self-cleaning design. Roll back and forth on the furniture surface to pick up pet hair, then open the lid and remove pet fur; the product is ready for use again without replacing the new one.',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
     imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
   },
   {
-    name: 'Refined details',
+    name: 'One for all',
     description:
-      'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
+      'Lint can be anywhere. Our roller can be used on sofas, clothes, carpets, beds, and more. Please note, our roller was not intended for smooth surfaces.',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
     imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },
   {
-    name: 'Refined details',
+    name: 'Easy to clean',
     description:
-      'We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.',
+      'The lint has to go somewhere! We are happy to announce that our roller has a waste compartment. Once done with the roller, simply empty the compartment out and reuse when needed.',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
     imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },

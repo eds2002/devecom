@@ -10,10 +10,8 @@ const Features = () => {
         <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
                 <h2 className="py-24 text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
-                Our motto is simple.<br/>
-                <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1] italic"> Quality </span>
-                over
-                <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1] italic"> quantity </span>
+                The Last Lint Roller You'll Ever
+                <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> Buy </span>
                 </h2>
             </div>
 

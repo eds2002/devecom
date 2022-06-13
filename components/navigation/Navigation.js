@@ -3,6 +3,8 @@ import { Menu, Popover, Transition,Dialog, Tab } from '@headlessui/react'
 import { Fragment, useState, useEffect } from 'react'
 import {Announcement, Shopnav} from '../'
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '../../assets/BulaLogoWhite.svg'
 const products = [
     {
       id: 1,
@@ -26,7 +28,7 @@ const products = [
 
 const navigation = {
     pages: [
-      { name: 'Cubed', href: '/cubed' },
+      { name: 'Bula Mic', href: '/bulamic' },
       { name: 'Our Story', href: '/story' },
       { name: 'Support', href: '/support' },
     ],
@@ -88,12 +90,12 @@ const Navigation = ({active, shopNav}) => {
                     </div>
 
                     {/* Logo (lg+) */}
-                    <div className="flex-1 text-center md:flex md:items-center">
-                        <Link href = "/">
-                            <a>
-                                <span className="text-lg font-bold text-white">Logo</span>
-                            </a>
-                        </Link>
+                    <div className="flex-1 w-full h-full md:flex md:items-center">
+                        <div className = "relative flex items-center justify-center w-full h-full select-none md:justify-start">
+                            <Link href = "/">
+                                <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer"/>
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Navigation */}

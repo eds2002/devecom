@@ -17,15 +17,15 @@ const Promo = () => {
                 <div className="relative w-full h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="relative flex flex-col items-start justify-end w-full h-full mx-auto">
                         <h2 className="max-w-3xl text-4xl font-medium tracking-tight text-white md:text-7xl">
-                            High quality without the <span className = "font-extrabold">bulk.</span>
+                            The only mic you&apos;ll ever need
                         </h2>
                         <div className = "flex flex-col items-center w-full gap-3 my-8 sm:justify-start sm:flex-row ">
                             <Link href = "#">
                                 <a className="w-full px-8 py-3 text-sm font-medium text-center text-white bg-indigo-600 rounded-md md:text-base hover:bg-indigo-700 sm:w-auto active:bg-indigo-600 ">
-                                    Buy Now
+                                    Shop Now
                                 </a>
                             </Link>
-                            <Link href = "/cubed">
+                            <Link href = "/bulamic">
                                 <a className = "text-sm text-white transition cursor-pointer hover:text-gray-300">Learn more</a>
                             </Link>
                         </div>

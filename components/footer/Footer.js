@@ -1,21 +1,26 @@
 import { navigation } from "./footer.data"
+import logo from '../../assets/BulaLogoWhite.svg'
+import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#16161a]" aria-labelledby="footer-heading">
+    <footer className="bg-[#000000]" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <img
-              className="h-10"
-              src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
-              alt="Company name"
-            />
+            <div className=" md:flex md:items-center">
+              <div className = "relative flex items-center w-full h-full md:justify-start">
+                <Link href = "/">
+                  <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer"/>
+                </Link>
+              </div>
+            </div>
             <p className="text-base text-[#94a1b2]">
-              Making the world a better place through constructing elegant hierarchies.
+              The last microphone you will ever need.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -28,7 +33,7 @@ export default function Footer() {
           </div>
           <div className="grid col-span-2 gap-8 mt-12 sm:grid-cols-3" >
               <div>
-                <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Support</h3>
+                <h3 className="text-sm font-semibold tracking-wider text-gray-200 uppercase">Support</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -40,7 +45,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Company</h3>
+                <h3 className="text-sm font-semibold tracking-wider text-gray-200 uppercase">Company</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -52,7 +57,7 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Legal</h3>
+                <h3 className="text-sm font-semibold tracking-wider text-gray-200 uppercase">Legal</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
@@ -65,8 +70,8 @@ export default function Footer() {
               </div>
           </div>
         </div>
-        <div className="flex items-center justify-center pt-8 mt-12 border-t border-gray-200">
-          <p className="text-base text-gray-400 xl:text-center">&copy; 2020 ComponanyName, Inc. All rights reserved.</p>
+        <div className="flex items-center justify-center pt-8 mt-12 border-t border-gray-600">
+          <p className="text-base text-gray-400 xl:text-center">&copy; 2020 Bula, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>

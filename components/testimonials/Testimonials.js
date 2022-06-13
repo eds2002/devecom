@@ -20,16 +20,16 @@ const Testimonials = () => {
         swipeToSlide: true,
       };
   return (
-      <div className = "w-full overflow-hidden">
+      <div className = "w-full overflow-hidden bg-[#16161a]">
 
         <div className="relative max-w-2xl px-4 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className = "flex flex-col items-center justify-center">
-                <h1 className = "text-3xl font-bold text-center sm:text-4xl">
+                <h1 className = "text-3xl font-bold text-center text-white sm:text-4xl">
                     Take a look at what our
-                    <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> customers </span>
+                    <span className = "relative before:content-[''] before:bg-[#2cb67d]/50 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> customers </span>
                     have to say.
                 </h1>
-                <p className = "max-w-xs my-3 text-sm text-center text-gray-500 sm:max-w-lg sm:text-md md:text-lg lg:text-xl">We value our customers and appreciate hearing how we can improve and better support you in the future.</p>
+                <p className = "max-w-xs my-3 text-sm text-center text-[#94a1b2] sm:max-w-lg sm:text-md md:text-lg lg:text-xl">We value our customers and appreciate hearing how we can improve and better support you in the future.</p>
             </div>
 
             <Slider {...settings}>
@@ -41,22 +41,22 @@ const Testimonials = () => {
                                     <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </span>
-                            <h1 className = "mt-5 text-xl font-bold">{review.name}</h1>
-                            <p className = "text-base font-medium text-gray-500">{review.location}</p>
+                            <h1 className = "mt-5 text-xl font-bold text-white">{review.name}</h1>
+                            <p className = "text-base font-medium text-[#94a1b2]">{review.location}</p>
                             <div className = "flex flex-col items-center justify-center mt-10">
                                 <div className="flex items-center ml-1">
                                     {[0, 1, 2, 3, 4].map((index) => (
                                         <StarIcon
                                         key={index}
                                         className={classNames(
-                                            review.rating > index ? 'text-yellow-400' : 'text-gray-200',
+                                            review.rating > index ? 'text-indigo-600' : 'text-gray-400',
                                             'h-8 w-8 flex-shrink-0'
                                         )}
                                         aria-hidden="true"
                                         />
                                     ))}
                                 </div>
-                                <p className = "max-w-4xl mt-5 text-lg font-medium text-center text-gray-900 md:text-2xl">{review.review}</p>
+                                <p className = "max-w-4xl mt-5 text-md font-medium text-center text-[#94a1b2] md:text-xl">{review.review}</p>
                             </div>
                         </div>
                     </div>

@@ -30,7 +30,7 @@ const ProductPage = () => {
     }
   }, [lastScrollY]);
   return (
-    <main className = "relative bg-white">
+    <main className = "relative bg-[#16161a]">
         <Navigation/>
         <ProductOverview/>
         <ProductSpecs/>
@@ -45,9 +45,9 @@ const ProductPage = () => {
               exit={{ opacity: 0 }}
             >
               <Link href = "#">
-                <a className = "absolute flex items-center justify-center w-32 mb-6 mr-6 bg-blue-200 shadow-xl h-14 rounded-xl">
+                <a className = "absolute flex items-center justify-center w-32 mb-6 mr-6 text-white bg-indigo-600 shadow-xl h-14 rounded-xl">
                     <span className = "text-sm font-medium">Back to top</span>
-                    <ArrowUpIcon className = "w-8 h-8 p-2 text-gray-900 "/>
+                    <ArrowUpIcon className = "w-8 h-8 p-2 text-white "/>
                 </a>
               </Link>
             </motion.div>

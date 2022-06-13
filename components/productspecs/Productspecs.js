@@ -7,12 +7,11 @@ const Productspecs = () => {
             {/* Details section */}
             <section aria-labelledby="details-heading">
                 <div className="flex flex-col items-center text-center">
-                    <h2 id="details-heading" className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    The Fine Details
+                    <h2 id="details-heading" className="max-w-xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                    The little details things matter to us.
                     </h2>
-                    <p className="max-w-3xl mt-3 text-lg text-gray-600">
-                    Our patented padded snack sleeve construction protects your favorite treats from getting smooshed during
-                    all-day adventures, long shifts at work, and tough travel schedules.
+                    <p className="max-w-3xl mt-3 text-lg text-[#94a1b2]">
+                        Take a quick look at what makes our microphone one of the best microphones out there.
                     </p>
                 </div>
 

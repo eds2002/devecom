@@ -39,7 +39,7 @@ const footerNavigation = {
 }
 export default function Home() {
   return (
-    <main className = "bg-white h-[100vh]">
+    <main className = "bg-[#16161a] h-[100vh]">
         <Head>
           <title>Business Name</title>
         </Head>

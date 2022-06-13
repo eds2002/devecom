@@ -74,15 +74,15 @@ const Navigation = ({active, shopNav}) => {
     }
   }, [lastScrollY]);
   return (
-    <div className={`fixed z-20 w-full shadow-xl bg-white ${show ? 'translate-y-[0%]' : 'translate-y-[-100%]'} transition duration-300`}>
-        <Announcement/>
+    <div className={`fixed z-20 w-full shadow-xl bg-[#16161a] ${show ? 'translate-y-[0%]' : 'translate-y-[-100%]'} transition duration-300`}>
+        {/* <Announcement/> */}
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div>
                 <div className="flex items-center justify-between h-16">
                     {/* Hamburger */}
                     <div className = "block cursor-pointer md:hidden" onClick = {()=>setOpen(!open)}>
                         <MenuIcon
-                            className="flex-shrink-0 w-6 h-6 text-black group-hover:text-gray-500"
+                            className="flex-shrink-0 w-6 h-6 text-white group-hover:text-gray-500"
                             aria-hidden="true"
                         />
                     </div>
@@ -91,7 +91,7 @@ const Navigation = ({active, shopNav}) => {
                     <div className="flex-1 text-center md:flex md:items-center">
                         <Link href = "/">
                             <a>
-                                <span className="text-lg font-bold text-black">Logo</span>
+                                <span className="text-lg font-bold text-white">Logo</span>
                             </a>
                         </Link>
                     </div>
@@ -102,7 +102,7 @@ const Navigation = ({active, shopNav}) => {
                         {/* Links */}
                         {navigation.pages.map((page,id) => (
                             <Link href = {page.href ?? ''} key = {id}>
-                                <a className = "hidden md:block">{page.name}</a>
+                                <a className = "hidden font-medium text-white md:block hover:text-indigo-600">{page.name}</a>
                             </Link>
                         ))}
 
@@ -112,7 +112,7 @@ const Navigation = ({active, shopNav}) => {
                             <Popover className="flow-root text-sm lg:ml-8">
                                 <Popover.Button className="flex items-center p-2 -m-2 group">
                                     <ShoppingBagIcon
-                                        className="flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-gray-500"
+                                        className="flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-indigo-600"
                                         aria-hidden="true"
                                     />
                                     {/* <span className="w-5 h-5 text-sm font-medium text-white bg-gray-500 rounded-full group-hover:text-white">0</span> */}
@@ -127,11 +127,11 @@ const Navigation = ({active, shopNav}) => {
                                     leaveFrom="opacity-100"
                                     leaveTo="opacity-0"
                                 >
-                                    <Popover.Panel className="absolute top-24 lg:top-8 inset-x-0 mt-px pb-6 bg-white shadow-lg sm:px-2  lg:left-auto lg:right-0 lg:mt-3 lg:-mr-1.5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-10">
+                                    <Popover.Panel className="absolute top-24 lg:top-8 inset-x-0 mt-px pb-6 bg-[#242629] shadow-lg sm:px-2  lg:left-auto lg:right-0 lg:mt-3 lg:-mr-1.5 lg:w-80 lg:rounded-lg lg:ring-1 lg:ring-black lg:ring-opacity-10">
                                         <h2 className="sr-only">Shopping Cart</h2>
 
                                         <form className="max-w-2xl px-4 mx-auto">
-                                        <ul role="list" className="divide-y divide-gray-200">
+                                        <ul role="list" className="divide-y divide-gray-700">
                                             {products.map((product) => (
                                             <li key={product.id} className="flex items-center py-6">
                                                 <img
@@ -140,12 +140,12 @@ const Navigation = ({active, shopNav}) => {
                                                 className="flex-none w-16 h-16 border border-gray-200 rounded-md"
                                                 />
                                                 <div className="flex-auto ml-4">
-                                                <h3 className="font-medium text-gray-900">
+                                                <h3 className="font-medium text-white">
                                                     <Link href = "product.href">
                                                         <a>{product.name}</a>
                                                     </Link>
                                                 </h3>
-                                                <p className="text-gray-500">{product.color}</p>
+                                                <p className="text-[#94a1b2]">{product.color}</p>
                                                 </div>
                                             </li>
                                             ))}
@@ -153,7 +153,7 @@ const Navigation = ({active, shopNav}) => {
 
                                         <button
                                             type="submit"
-                                            className="w-full px-4 py-2 text-sm font-medium text-white text-gray-900 bg-blue-200 border border-transparent rounded-md shadow-sm hover:bg-blue-300 focus:outline-none ring-offset-2 focus:ring-blue-200 focus:ring-2"
+                                            className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none ring-offset-2 focus:ring-indigo-600 focus:ring-2"
                                         >
                                             Checkout
                                         </button>
@@ -195,7 +195,7 @@ const Navigation = ({active, shopNav}) => {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
             >
-            <Dialog.Panel className="relative flex flex-col w-full max-w-xs pb-12 overflow-y-auto bg-white shadow-xl">
+            <Dialog.Panel className="relative flex flex-col w-full max-w-xs pb-12 overflow-y-auto bg-[#16161a] shadow-xl">
                 <div className="flex px-4 pt-5 pb-2">
                     <button
                         type="button"
@@ -210,9 +210,9 @@ const Navigation = ({active, shopNav}) => {
                 {/* Links */}
                 <div className="px-4 py-6 space-y-6">
                     {navigation.pages.map((page,id) => (
-                        <div key={id} className="flow-root border-b-[1px] pb-5">
+                        <div key={id} className="flow-root border-b-[1px] border-gray-700 pb-5">
                             <Link href = {page.href ?? ''}>
-                                <a className="block p-2 -m-2 text-2xl font-medium text-gray-900">
+                                <a className="block p-2 -m-2 text-2xl font-medium text-white">
                                     {page.name}
                                 </a>
                             </Link>
@@ -223,7 +223,7 @@ const Navigation = ({active, shopNav}) => {
                     {navigation.resources.map((resource,id) => (
                         <div key={id} className="flow-root">
                             <Link href = {resource.href ?? ''}>
-                                <a className="block p-2 -m-2 text-sm font-medium text-gray-500">
+                                <a className="block p-2 -m-2 text-sm font-medium text-[#72757e]">
                                     {resource.name}
                                 </a>
                             </Link>

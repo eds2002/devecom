@@ -42,21 +42,21 @@ const Faq = () => {
         return classes.filter(Boolean).join(' ')
     }
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+    <div className="px-4 py-12 mx-auto max-w-7xl sm:py-16 sm:px-6 lg:px-8">
         <div className="mx-auto">
-            <div className = "flex justify-between items-center">
-                <h2 className="text-center text-3xl font-bold text-gray-900 sm:text-4xl">Frequently asked questions</h2>
+            <div className = "flex items-center justify-between">
+                <h2 className="text-3xl font-bold text-center text-white sm:text-4xl">Frequently asked questions</h2>
                 <p></p>
             </div>           
-            <dl className="mt-6 space-y-6 divide-y divide-gray-200">
+            <dl className="mt-6 space-y-6 divide-y divide-gray-700">
                 {faqs.map((faq) => (
                 <Disclosure as="div" key={faq.question} className="pt-6">
                     {({ open }) => (
                     <>
                         <dt className="text-base">
-                        <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
-                            <span className="font-medium text-gray-900">{faq.question}</span>
-                            <span className="ml-6 h-7 flex items-center">
+                        <Disclosure.Button className="flex items-start justify-between w-full text-left text-gray-400">
+                            <span className="font-medium text-white">{faq.question}</span>
+                            <span className="flex items-center ml-6 h-7">
                             <ChevronDownIcon
                                 className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
                                 aria-hidden="true"
@@ -64,8 +64,8 @@ const Faq = () => {
                             </span>
                         </Disclosure.Button>
                         </dt>
-                        <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="text-base text-gray-500">{faq.answer}</p>
+                        <Disclosure.Panel as="dd" className="pr-12 mt-2">
+                        <p className="text-base text-[#94a1b2]">{faq.answer}</p>
                         </Disclosure.Panel>
                     </>
                     )}

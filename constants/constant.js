@@ -46,23 +46,23 @@ export const incentives = [
 
 export const features = [
   {
-    name: 'Reusable rollers are the future',
+    name: 'All In One Solution',
     description:
-      'Our pet hair roller is reusable with the self-cleaning design. Roll back and forth on the furniture surface to pick up pet hair, then open the lid and remove pet fur; the product is ready for use again without replacing the new one.',
+      '<p>No longer carry excessive gears ever again. We offer the best <b>all-in-one</b> solution for <b>shooting high quality audio</b> at a low price!</p>',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
     imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
   },
   {
-    name: 'One for all',
+    name: 'Lightweight and Portable',
     description:
-      'Lint can be anywhere. Our roller can be used on sofas, clothes, carpets, beds, and more. Please note, our roller was not intended for smooth surfaces.',
+      '<p>Never carry heaving equipment again! Our microphones are <b>quick and easy</b> to setup with <b>bluetooth connection</b>.</p>',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
     imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },
   {
-    name: 'Easy to clean',
+    name: 'Exceptional Wireless System',
     description:
-      'The lint has to go somewhere! We are happy to announce that our roller has a waste compartment. Once done with the roller, simply empty the compartment out and reuse when needed.',
+      '<p>Our rechargeable battery supports up to <b>10 hours of working time</b>.</p>',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
     imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },

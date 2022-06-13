@@ -6,12 +6,11 @@ const Features = () => {
     return classes.filter(Boolean).join(' ')
   }
   return (
-    <div>
+    <div className = "bg-[#16161a]">
         <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-                <h2 className="py-24 text-5xl font-bold tracking-tight text-gray-900 lg:text-6xl">
-                The Last Lint Roller You Will Ever
-                <span className = "relative before:content-[''] before:bg-yellow-200 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> Buy </span>
+                <h2 className="py-24 text-5xl font-bold tracking-tight text-white lg:text-6xl">
+                Removing all the bulk and giving you quality.
                 </h2>
             </div>
 
@@ -27,16 +26,16 @@ const Features = () => {
                         'mt-6 lg:mt-0 lg:row-start-1 lg:col-span-5 xl:col-span-4'
                     )}
                     >
-                        <h3 className="text-lg font-bold text-gray-900 lg:text-3xl">{feature.name}</h3>
-                        <p className="mt-2 text-sm text-gray-500">{feature.description}</p>
+                        <h3 className="text-lg font-bold text-white lg:text-3xl">{feature.name}</h3>
+                        <div className="mt-2 text-sm text-[#94a1b2]" dangerouslySetInnerHTML={{__html: feature.description}}/>
                         <div className = "flex flex-col items-center gap-3 my-8 lg:items-center lg:flex-row md:justify-start">
                             <Link href="#">
-                                <a className="w-full px-8 py-2 text-sm font-medium text-center text-gray-900 bg-blue-200 rounded-md md:text-base hover:bg-blue-300 lg:w-auto active:bg-blue-200">
+                                <a className="w-full px-8 py-2 text-sm font-medium text-center text-white bg-indigo-600 rounded-md md:text-base hover:bg-indigo-700 lg:w-auto active:bg-indigo-600">
                                     Shop now
                                 </a>
                             </Link>
                             <Link href = "/cubed" >
-                                <a className = "text-xs sm:text-[15px] text-gray-600 cursor-pointer">
+                                <a className = "text-xs sm:text-[15px] text-white hover:text-gray-500 transition cursor-pointer">
                                     Learn more
                                 </a>
                             </Link>

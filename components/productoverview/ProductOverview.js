@@ -96,7 +96,7 @@ export default function ProductOverview() {
   let maxDays = maxDate.getDate() > month[maxDate.getMonth()].days ? maxDate.getDate() - month[maxDate.getMonth()].days : maxDate.getDate()
   let maxYear = maxDate.getFullYear()
   return (
-    <div className="px-4 bg-white pt-[154px] pb-24 relative">
+    <div className="px-4 bg-[#16161a] pt-[154px] pb-24 relative">
         {/* Product */}
         <section className="relative flex items-center justify-between h-full mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className = "grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-5">
@@ -140,13 +140,16 @@ export default function ProductOverview() {
                 {/* Information */}
                 <div className = "md:col-start-3 md:col-end-5 lg:col-start-4 lg:col-end-5">
                     <div className="flex items-center justify-between mt-8">
-                        <h1 className="text-3xl font-bold text-gray-900">Cubed.</h1>
-                        <p className="text-xl font-medium text-gray-900">$19.99</p>
+                        <h1 className="text-3xl font-bold text-white ">Cubed.</h1>
+                        <p className="flex items-center justify-center text-xl font-medium text-white gap-x-3">
+                          <span>$21.99</span>
+                          <span className = "text-xs text-gray-500 line-through">$32.99</span>
+                        </p>
                     </div>
                     <div className="mt-4">
                         <h2 className="sr-only">Reviews</h2>
                         <div className="flex items-center">
-                            <p className="text-sm text-gray-700">
+                            <p className="text-sm text-white">
                                 {reviews.average}
                                 <span className="sr-only"> out of 5 stars</span>
                             </p>
@@ -155,7 +158,7 @@ export default function ProductOverview() {
                                     <StarIcon
                                     key={rating}
                                     className={classNames(
-                                        reviews.average > rating ? 'text-yellow-400' : 'text-gray-200',
+                                        reviews.average > rating ? 'text-indigo-600' : 'text-gray-400',
                                         'h-5 w-5 flex-shrink-0'
                                     )}
                                     aria-hidden="true"
@@ -167,7 +170,7 @@ export default function ProductOverview() {
                             </div>
                             <div className="flex ml-4">
                                 <Link href = "#reviews">
-                                  <a className="text-xs font-medium text-black hover:text-gray-500">
+                                  <a className="text-xs font-medium text-[#2cb67d] hover:text-[#2cb67d]/50">
                                       See all {reviews.featured.length} reviews
                                   </a>
                                 </Link>
@@ -177,7 +180,7 @@ export default function ProductOverview() {
                     <form className = "mt-8">
                         {/* Color picker */}
                         <div>
-                            <h2 className="text-sm font-medium text-gray-900">Color</h2>
+                            <h2 className="text-sm font-medium text-white">Color: <span className = "text-sm">{selectedColor.name}</span></h2>
 
                             <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-2">
                                 <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
@@ -213,22 +216,22 @@ export default function ProductOverview() {
                         <div className = "flex flex-col mt-6 gap-y-3">
                             <button
                             type="submit"
-                            className="flex items-center justify-center w-full px-8 py-2 text-base text-black transition bg-blue-200 border border-transparent rounded-md hover:bg-blue-300/75 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-200"
+                            className="flex items-center justify-center w-full px-8 py-2 text-base font-medium text-white transition bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                             >
                             Add to cart
                             </button>
-                            <p className = "text-xs text-gray-700">Get it
-                              <span className = "font-bold">{` ${minMonth} ${minDays}, ${minYear} - ${maxMonth} ${maxDays}, ${maxYear}`}</span>
+                            <p className = "text-xs text-gray-400">Get it
+                              <span className = "font-bold text-white">{` ${minMonth} ${minDays}, ${minYear} - ${maxMonth} ${maxDays}, ${maxYear}`}</span>
                             </p>
                         </div>
                     </form>
 
-                    <div className="mt-4 prose-sm prose text-gray-500">
+                    <div className="mt-4 prose-sm prose text-[#94a1b2]">
                         {/* Description */}
                         <h2 className="mt-8 mb-2 text-sm font-medium text-gray-900">Description</h2>
                         <p className = "mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
                         <p className = "mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
-                        <p className = "mb-5 text-xs font-bold text-black">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
+                        <p className = "mb-5 text-xs font-bold text-white">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
                     </div>
 
                     <div aria-labelledby="policies-heading" className="mt-10">
@@ -238,10 +241,10 @@ export default function ProductOverview() {
                         </h2>
                         <dl className="grid gap-3 grid-row-3">
                         {policies.map((policy) => (
-                            <div key={policy.name} className="flex flex-col items-center justify-center p-1 text-center border border-gray-200 rounded-lg bg-gray-50">
+                            <div key={policy.name} className="flex flex-col items-center justify-center p-2 text-center rounded-sm bg-[#242629]">
                                 <dt>
-                                    <policy.icon className="flex-shrink-0 w-5 h-5 mx-auto text-gray-400" aria-hidden="true" />
-                                    <span className="mt-4 text-xs font-medium text-gray-900">{policy.name}</span>
+                                    <policy.icon className="flex-shrink-0 w-5 h-5 mx-auto text-white" aria-hidden="true" />
+                                    <span className="mt-4 text-xs font-medium text-white">{policy.name}</span>
                                 </dt>
                             </div>
                         ))}

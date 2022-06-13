@@ -2,7 +2,7 @@ import { incentives } from "../../constants/constant"
 import Image from "next/image"
 const Keyfeatures = () => {
   return (
-    <div className = "bg-blue-100">
+    <div className = "bg-[#242629]">
       <div className="relative flex items-center justify-center w-full max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="p-16 px-6 rounded-2xl">
           <div className="max-w-xl mx-auto lg:max-w-none">
@@ -15,8 +15,8 @@ const Keyfeatures = () => {
                     </div>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
-                    <h3 className="text-xl font-bold text-gray-900 lg:text-2xl">{incentive.name}</h3>
-                    <p className="mt-2 text-sm text-gray-500">{incentive.description}</p>
+                    <h3 className="text-xl font-bold text-white lg:text-2xl">{incentive.name}</h3>
+                    <p className="mt-2 text-sm text-[#94a1b2]">{incentive.description}</p>
                   </div>
                 </div>
               ))}

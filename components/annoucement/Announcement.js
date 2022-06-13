@@ -4,16 +4,16 @@ const currencies = ['USD', 'CAD', 'AUD', 'EUR', 'GBP']
 
 const Announcement = () => {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-[#2cb67d]">
     {/* Top navigation */}
-      <div className="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8 relative">
+      <div className="relative flex items-center justify-between h-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Currency selector */}
         {/* <form>
           <div>
             <label htmlFor="desktop-currency" className="sr-only">
               Currency
             </label>
-            <div className="-ml-2 group relative bg-gray-900 border-transparent rounded-md focus-within:ring-2 focus-within:ring-white z-10">
+            <div className="relative z-10 -ml-2 bg-gray-900 border-transparent rounded-md group focus-within:ring-2 focus-within:ring-white">
               <select
                 id="desktop-currency"
                 name="currency"
@@ -23,7 +23,7 @@ const Announcement = () => {
                   <option key={currency}>{currency}</option>
                 ))}
               </select>
-              <div className="absolute right-0 inset-y-0 flex items-center pointer-events-none">
+              <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none">
                 <svg
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Announcement = () => {
           </div>
         </form> */}
         {/* Annoucement */}
-        <p className="flex-2 text-center text-sm font-medium text-white lg:flex-none absolute left-0 right-0">
+        <p className="absolute left-0 right-0 text-sm font-medium text-center text-white flex-2 lg:flex-none">
           Free delivery worldwide.
         </p>
       </div>

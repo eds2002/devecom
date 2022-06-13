@@ -2,7 +2,7 @@ import { navigation } from "./footer.data"
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-100" aria-labelledby="footer-heading">
+    <footer className="bg-[#16161a]" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -14,12 +14,12 @@ export default function Footer() {
               src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
               alt="Company name"
             />
-            <p className="text-base text-gray-500">
+            <p className="text-base text-[#94a1b2]">
               Making the world a better place through constructing elegant hierarchies.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+                <a key={item.name} href={item.href} className="text-gray-400 hover:text-indigo-600">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="w-6 h-6" aria-hidden="true" />
                 </a>
@@ -28,11 +28,11 @@ export default function Footer() {
           </div>
           <div className="grid col-span-2 gap-8 mt-12 sm:grid-cols-3" >
               <div>
-                <h3 className="text-sm font-semibold tracking-wider text-gray-600 uppercase">Support</h3>
+                <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Support</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-indigo-600">
                         {item.name}
                       </a>
                     </li>
@@ -40,11 +40,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold tracking-wider text-gray-600 uppercase">Company</h3>
+                <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Company</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-indigo-600">
                         {item.name}
                       </a>
                     </li>
@@ -52,11 +52,11 @@ export default function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm font-semibold tracking-wider text-gray-600 uppercase">Legal</h3>
+                <h3 className="text-sm font-semibold tracking-wider text-white uppercase">Legal</h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-indigo-600">
                         {item.name}
                       </a>
                     </li>

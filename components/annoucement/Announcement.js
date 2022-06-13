@@ -4,7 +4,7 @@ const currencies = ['USD', 'CAD', 'AUD', 'EUR', 'GBP']
 
 const Announcement = () => {
   return (
-    <div className="bg-[#2cb67d]">
+    <div className="bg-[#000000]">
     {/* Top navigation */}
       <div className="relative flex items-center justify-between h-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Currency selector */}

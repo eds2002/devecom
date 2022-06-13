@@ -41,7 +41,13 @@ export default function Home() {
   return (
     <main className = "bg-[#16161a] h-[100vh]">
         <Head>
-          <title>Business Name</title>
+          <meta charSet='UTF-8'/>
+          <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'/>
+          <meta httpEquiv='X-UA-Compatible' content='ie=edge'/>
+          <title>Bula Microphone</title>
+          <meta name = "description" contnet = "Bula Microphones are the new top of the line quality phone microphones."/>
+          <meta name = "keywords" content = 'BULA, MICROPHONE, PHONE, WIRELESS, BLUETOOTH'/>
+          {/* Favicon */}
         </Head>
         <Navigation active = "home"/>
         <Hero/>

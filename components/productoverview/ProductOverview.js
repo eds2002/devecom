@@ -1,6 +1,6 @@
 import { useState,Fragment } from 'react'
 import { RadioGroup,Dialog,Transition } from '@headlessui/react'
-import { StarIcon, XIcon } from '@heroicons/react/solid'
+import { StarIcon, QuestionMarkCircleIcon} from '@heroicons/react/solid'
 import {reviews,policies} from '../../constants/constant'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -46,6 +46,10 @@ const product = {
       { name: 'Heather Grey', bgColor: 'bg-blue-400', selectedColor: 'ring-blue-400' },
       { name: 'Heather Grey', bgColor: 'bg-red-400', selectedColor: 'ring-red-400' },
     ],
+    connectorType: [
+      { name: 'iOS', description: 'Lightning' },
+      { name: 'Android', description: 'USB Type C' },
+    ],
     description: `
       <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p>
       <p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>
@@ -71,8 +75,8 @@ export default function ProductOverview() {
     router.push(`#image-${hrefId}`)
   }
 
-  const [selectedColor, setSelectedColor] = useState(product.colors[0])
-  
+  const [selectedCable, setSelectedCable] = useState(product.connectorType[0])
+    
   const month = [{month:"January", days: 31},{month:"February", days: 28},{month:"March", days:31},{month:"April", days:30},{month:"May", days:31},{month:"June", days:30},{month:"July", days:31},{month:"August",days:31},{month:"September",days:30},{month:"October",days:31},{month:"November",days:30},{month:"December",days:31}];
   let minDaysToAdd = 14; //Max amount of days
   let maxDaysToAdd = 7; //Max amount of days
@@ -139,13 +143,15 @@ export default function ProductOverview() {
                 </div>
                 {/* Information */}
                 <div className = "md:col-start-3 md:col-end-5 lg:col-start-4 lg:col-end-5">
-                    <div className="flex items-center justify-between mt-8">
-                        <h1 className="text-3xl font-bold text-white ">Cubed.</h1>
-                        <p className="flex items-center justify-center text-xl font-medium text-white gap-x-3">
-                          <span>$21.99</span>
-                          <span className = "text-xs text-gray-500 line-through">$32.99</span>
+                    <div className="flex items-center mt-8 gap-x-3">
+                        <h1 className="text-lg font-semibold text-white ">Bula Microphone</h1>
+                        <div className = "w-[0.5px] h-5 text-white bg-white"></div>
+                        <p className="flex items-center justify-center text-lg font-semibold text-white gap-x-3">
+                          $26.99
                         </p>
                     </div>
+
+                    {/* Reviews */}
                     <div className="mt-4">
                         <h2 className="sr-only">Reviews</h2>
                         <div className="flex items-center">
@@ -177,61 +183,82 @@ export default function ProductOverview() {
                             </div>
                         </div>
                     </div>
-                    <form className = "mt-8">
+
+                    {/* Phone select, Add to cart, quantity */}
+                    <form className = "mt-4">
                         {/* Color picker */}
                         <div>
-                            <h2 className="text-sm font-medium text-white">Color: <span className = "text-sm">{selectedColor.name}</span></h2>
-
-                            <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-2">
-                                <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
-                                <div className="flex flex-wrap items-center gap-x-2 gap-y-3">
-                                    {product.colors.map((color) => (
-                                        <RadioGroup.Option
-                                        key={color.name}
-                                        value={color}
-                                        className={({ active, checked }) =>
-                                            classNames(
-                                            color.selectedColor,
-                                            active && checked ? 'ring ring-offset-1' : '',
-                                            !active && checked ? 'ring-2' : '',
-                                            '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none'
-                                            )
-                                        }
-                                        >
-                                        <RadioGroup.Label as="span" className="sr-only">
-                                            {color.name}
-                                        </RadioGroup.Label>
-                                        <span
-                                            aria-hidden="true"
+                            <div className="w-full sm:flex sm:justify-between">
+                              {/* Size selector */}
+                              <RadioGroup value={selectedCable} onChange={setSelectedCable} className = "w-full">
+                                <RadioGroup.Label className="block text-sm font-medium text-white ">Connector: <span className = "font-normal text-gray-400">{selectedCable.name}</span></RadioGroup.Label>
+                                <div className="flex mt-2 gap-x-3">
+                                  {product.connectorType.map((connector) => (
+                                    <RadioGroup.Option
+                                      as="div"
+                                      key={connector.name}
+                                      value={connector}
+                                      className={({ active }) =>
+                                        classNames(
+                                          active ? 'ring-1 ring-indigo-600' : '',
+                                          'relative flex-1 border border-gray-600 rounded-lg px-4 py-2 cursor-pointer focus:outline-none'
+                                        )
+                                      }
+                                    >
+                                      {({ active, checked }) => (
+                                        <>
+                                          <RadioGroup.Label as="p" className="text-sm font-medium text-white">
+                                            {connector.name}
+                                          </RadioGroup.Label>
+                                          <RadioGroup.Description as="p" className="mt-1 text-xs text-[#94a1b2]">
+                                            {connector.description}
+                                          </RadioGroup.Description>
+                                          <div
                                             className={classNames(
-                                            color.bgColor,
-                                            'h-8 w-8 border border-black border-opacity-10 rounded-full'
+                                              active ? 'border' : 'border-2',
+                                              checked ? 'border-indigo-500' : 'border-transparent',
+                                              'absolute -inset-px rounded-lg pointer-events-none'
                                             )}
-                                        />
-                                        </RadioGroup.Option>
-                                    ))}
+                                            aria-hidden="true"
+                                          />
+                                        </>
+                                      )}
+                                    </RadioGroup.Option>
+                                  ))}
                                 </div>
-                            </RadioGroup>
+                              </RadioGroup>
+                            </div>
                         </div>
                         <div className = "flex flex-col mt-6 gap-y-3">
-                            <button
-                            type="submit"
-                            className="flex items-center justify-center w-full px-8 py-2 text-base font-medium text-white transition bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
-                            >
-                            Add to cart
-                            </button>
+                            <div className = "flex gap-x-3">
+                              <select name = "quantity" className = "font-light bg-[#242629] text-white rounded-md border-none">
+                                <option value = '1'>Qty: 1</option>
+                                <option value = '2'>Qty: 2</option>
+                                <option value = '3'>Qty: 3</option>
+                                <option value = '4'>Qty: 4</option>
+                                <option value = '5'>Qty: 5</option>
+                              </select>
+                              <button
+                              type="submit"
+                              className="flex items-center justify-center w-full px-8 py-2 text-base font-medium text-white transition bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                              >
+                              Add to cart
+                              </button>
+                            </div>
                             <p className = "text-xs text-gray-400">Get it
                               <span className = "font-bold text-white">{` ${minMonth} ${minDays}, ${minYear} - ${maxMonth} ${maxDays}, ${maxYear}`}</span>
                             </p>
                         </div>
                     </form>
 
-                    <div className="mt-4 prose-sm prose text-[#94a1b2]">
+                    {/* Description */}
+                    <div className="mt-4 text-[#94a1b2] bg-[#242629] p-6 rounded-xl">
+                        <h2 className = "sr-only" id = 'product-description'>Product Description</h2>
                         {/* Description */}
-                        <h2 className="mt-8 mb-2 text-sm font-medium text-gray-900">Description</h2>
-                        <p className = "mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
-                        <p className = "mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
-                        <p className = "mb-5 text-xs font-bold text-white">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
+                        <h2 className="mb-2 text-sm font-semibold text-white ">The highest quality phone microphone</h2>
+                        <p className = "mb-5 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
+                        <p className = "mb-5 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
+                        <p className = "text-xs font-bold text-white">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
                     </div>
 
                     <div aria-labelledby="policies-heading" className="mt-10">
@@ -239,16 +266,20 @@ export default function ProductOverview() {
                         <h2 id="policies-heading" className="sr-only">
                         Our Policies
                         </h2>
-                        <dl className="grid gap-3 grid-row-3">
                         {policies.map((policy) => (
-                            <div key={policy.name} className="flex flex-col items-center justify-center p-2 text-center rounded-sm bg-[#242629]">
-                                <dt>
-                                    <policy.icon className="flex-shrink-0 w-5 h-5 mx-auto text-white" aria-hidden="true" />
-                                    <span className="mt-4 text-xs font-medium text-white">{policy.name}</span>
-                                </dt>
+                            <div key={policy.name} className="flex items-center justify-start p-2 text-center rounded-sm gap-x-3">
+                              <policy.icon className="flex-shrink-0 w-5 h-5 text-indigo-600" aria-hidden="true" />
+                              <span className="text-xs font-medium text-[#94a1b2]">{policy.name}</span>
+                              <div className = "relative group">
+                                <QuestionMarkCircleIcon className = "w-4 h-4 text-[#94a1b2] cursor-pointer" />
+                                <div className = "absolute w-[200px] bg-[#16161a] border-gray-700 border-[1px] bottom-6 flex items-start justify-center flex-col p-5 rounded-lg shadow-lg shadow-gray-500/10 opacity-0 group-hover:opacity-100 pointer-events-none">
+                                  <h3 className = "mb-2 text-sm font-medium text-white">{policy.name}</h3>
+                                  <p className = "text-sm text-left text-[#94a1b2]">{policy.details}</p>
+                                </div>
+                              </div>
+
                             </div>
                         ))}
-                        </dl>
                     </div>
                 </div>
             </div>

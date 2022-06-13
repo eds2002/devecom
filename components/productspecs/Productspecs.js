@@ -1,66 +1,39 @@
 import Image from "next/image"
 import Link from "next/link"
+import { features } from "./productspecs.data"
 const Productspecs = () => {
   return (
-    <div>
-        <div className="max-w-2xl px-4 py-24 mx-auto sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
-            {/* Details section */}
-            <section aria-labelledby="details-heading">
-                <div className="flex flex-col items-center text-center">
-                    <h2 id="details-heading" className="max-w-xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                    The little details things matter to us.
-                    </h2>
-                    <p className="max-w-3xl mt-3 text-lg text-[#94a1b2]">
-                        Take a quick look at what makes our microphone one of the best microphones out there.
-                    </p>
-                </div>
+    <div className="bg-[#16161a]">
+      <div className="py-24 mx-auto max-w-7xl sm:py-32 sm:px-2 lg:px-4">
+        <div className="max-w-2xl px-4 mx-auto lg:max-w-none">
+          <div className="max-w-3xl">
+            <h2 className="font-semibold text-[#94a1b2]">Bula Micrphone</h2>
+            <p className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">The little details matter</p>
+            <p className="mt-4 text-[#94a1b2]">
+                Don't be fooled by the Bula Microphones tiny frame. It is <b className = "text-gray-300">packed</b> with features that make it one of the most <b className = "text-gray-300">powerful</b> microphones on the market.
+            </p>
+          </div>
 
-                <div className="grid grid-cols-1 mt-16 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
-                    <div>
-                        <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <Image
-                            src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg"
-                            alt="Drawstring top with elastic loop closure and textured interior padding."
-                            className="object-cover object-center w-full h-full"
-                            layout = 'fill'
-                            />
-                        </div>
-                        <p className="mt-8 text-base text-gray-500">
-                            The 20L model has enough space for 370 candy bars, 6 cylinders of chips, 1220 standard gumballs, or any
-                            combination of on-the-go treats that your heart desires. Yes, we did the math.
-                        </p>
-                    </div>
-                    <div>
-                        <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <Image
-                            src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-02.jpg"
-                            alt="Front zipper pouch with included key ring."
-                            className="object-cover object-center w-full h-full"
-                            layout = 'fill'
-                            />
-                        </div>
-                        <p className="mt-8 text-base text-gray-500">
-                            Up your snack organization game with multiple compartment options. The quick-access stash pouch is ready
-                            for even the most unexpected snack attacks and sharing needs.
-                        </p>
-                    </div>
-                    <div>
-                        <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2">
-                            <Image
-                            src="https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-02.jpg"
-                            alt="Front zipper pouch with included key ring."
-                            className="object-cover object-center w-full h-full"
-                            layout = 'fill'
-                            />
-                        </div>
-                        <p className="mt-8 text-base text-gray-500">
-                            Up your snack organization game with multiple compartment options. The quick-access stash pouch is ready
-                            for even the most unexpected snack attacks and sharing needs.
-                        </p>
-                    </div>
+          <div className="pt-10 mt-10 space-y-16 border-t border-gray-600 sm:pt-16 sm:mt-16">
+            {features.map((feature) => (
+              <div
+                key={feature.name}
+                className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8 lg:items-center"
+              >
+                <div className="mt-6 lg:mt-0 lg:col-span-5 xl:col-span-4">
+                  <h3 className="text-lg font-medium text-white">{feature.name}</h3>
+                  <p className="mt-2 text-sm text-[#94a1b2]">{feature.description}</p>
                 </div>
-            </section>
+                <div className="flex-auto lg:col-span-7 xl:col-span-8">
+                  <div className="overflow-hidden bg-gray-100 rounded-lg aspect-w-5 aspect-h-2">
+                    <img src={feature.imageSrc} alt={feature.imageAlt} className="object-cover object-center" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
     </div>
   )
 }

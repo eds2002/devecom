@@ -1,4 +1,4 @@
-import { GlobeIcon, BadgeCheckIcon, SwitchHorizontalIcon } from '@heroicons/react/outline'
+import { GlobeIcon, BadgeCheckIcon } from '@heroicons/react/outline'
 export const reviews = {
     average: 3.9,
     featured: [
@@ -20,9 +20,16 @@ export const reviews = {
 
 
 export const policies = [
-    { name: 'Worldwide shipping', icon: GlobeIcon},
-    { name: '30 Day Warranty', icon: BadgeCheckIcon},
-    { name: 'Free exchanges', icon: SwitchHorizontalIcon},
+    { 
+      name: 'Worldwide shipping', 
+      icon: GlobeIcon, 
+      details:'Bula ships to nearly anywhere in the world! Shipping times may vary depending on location.',
+    },
+    { 
+      name: 'Quality Guarantee', 
+      icon: BadgeCheckIcon,
+      details:'If you don\n love it return it within 14 days for a full refund. Simply contact us and we\'ll take care of you.'
+    },
 ]
 
 export const incentives = [

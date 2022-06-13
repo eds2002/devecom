@@ -1,20 +1,80 @@
 import { GlobeIcon, BadgeCheckIcon } from '@heroicons/react/outline'
 export const reviews = {
-    average: 3.9,
+    average: 4.2,
     featured: [
       {
         id: 1,
-        title: "Can't say enough good things",
+        title: "For the price, you can't beat these mics!",
+        rating: 4,
+        content: `
+        <p>I was skeptical of the audio quality these little mics would produce, but I decided to try them anyway. Boy, was I mistaken...both mics are crystal clear. I had an outdoor video shoot with these mics and a smartphone on a gimbal. It looked and sounded like the video was shot on much more expensive equipment.</p>
+        `,
+        author: 'Kevin L. Easterling',
+        date: 'April 20, 2022',
+      },
+      {
+        id: 2,
+        title: "Cute microphone",
         rating: 3,
         content: `
-        <p>I was really pleased with the overall shopping experience. My order even included a little personal, handwritten note, which delighted me!</p>
-        <p>The product quality is amazing, it looks and feel even better than I had anticipated. Brilliant stuff! I would gladly recommend this store to my friends. And, now that I think of it... I actually have, many times!</p>
+        <p>there are two microphones. I brought this for taking videos. Acceptable sound quality and easy to use. Very convenient if you use it on a iPhone. Try to buy a transaction so I can use it on my computer.</p>
         `,
-        author: 'Risako M',
-        date: 'May 16, 2022',
-        datetime: '2022-01-06',
+        author: 'Mia',
+        date: 'June 3, 2022',
       },
-      // More reviews...
+      {
+        id: 3,
+        title: "Great product!",
+        rating: 5,
+        content: `
+        <p>The sound quality is excellent with this wireless microphone. It is very easy to set up and use. It is also compact, making it super easy to take with you places!
+        An awesome microphone for an awesome price! Highly recommend!</p>
+        `,
+        author: 'Anib',
+        date: 'May 28, 2022',
+      },
+      {
+        id: 4,
+        title: "Easy and works well.",
+        rating: 4,
+        content: `
+        <p>Used with Facebook Live to 'broadcast' youth hockey games. Works really well for play-by-play and color commentary. Seems like it gets about 60 foot range at the rink. Windscreen falls off a bit easily so I’ll have to glue that in place. Easy set up and it works well.</p>
+        `,
+        author: 'Austeeeen',
+        date: 'May 28, 2022',
+      },
+      {
+        id: 5,
+        title: "Great quality",
+        rating: 4,
+        content: `
+        <p>Both microphones connected to transmitter easily. Audio quality is great and this would be a good product for sound and video recordings.</p>
+        `,
+        author: 'Romer Guz',
+        date: 'May 30, 2022',
+      },
+      {
+        id: 6,
+        title: "Great sound quality ",
+        rating: 5,
+        content: `
+        <p>I have similar wireless microphone but my fiance wanted one for her iPhone that would do similar functionality. And she's been doing more recording with our marketing, this comes in handy as she did not want any bulky lavalier microphone that's wired so this wireless option what's the best choice. The wireless microphone can be clipped anywhere and it has a USBC charging port which comes with a cable that allows easy and fast charging..</p>
+        <p>
+        The bottom piece fits in the lightning port and iPhone seem to detect it right away I was able to record crystal clear audio!</p>
+        `,
+        author: 'Nabil',
+        date: 'May 30, 2022',
+      },
+      {
+        id: 7,
+        title: "Perfect for on the go meetings",
+        rating: 5,
+        content: `
+        <p>I do a lot of virtual meetings for work and I started to use my phone to dial into those meetings now. But one downside is my iPhone would pick up wind noises and car noises. This adapter helped solve that. I was able to clip it on my shirt while I drive or out at the park. It’s nice to be able to get some fresh air during those boring meetings. I tried it with my wife and she said my voice came through clear and didn't get much background/wind noises. So I'm happy with these.</p>
+        `,
+        author: 'WillTheDude',
+        date: 'May 30, 2022',
+      },
     ],
 } 
 

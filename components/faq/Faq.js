@@ -1,42 +1,6 @@
 import { RadioGroup, Disclosure } from '@headlessui/react'
 import { CurrencyDollarIcon, GlobeIcon, BadgeCheckIcon, SwitchHorizontalIcon, ChevronDownIcon } from '@heroicons/react/outline'
-const faqs = [
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-  ]
+import { faqs } from './faq.data'
 const Faq = () => {
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
@@ -66,6 +30,10 @@ const Faq = () => {
                         </dt>
                         <Disclosure.Panel as="dd" className="pr-12 mt-2">
                         <p className="text-base text-[#94a1b2]">{faq.answer}</p>
+                        <div className = "mt-5 text-sm font-medium text-gray-500">
+                          <p className = "inline">Answered by {faq.responder} </p>
+                          <p className = "inline"> on {faq.date}</p>
+                        </div>
                         </Disclosure.Panel>
                     </>
                     )}

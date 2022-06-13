@@ -11,7 +11,7 @@ const Reviews = () => {
         Recent reviews
         </h2>
 
-        <div className="pb-10 mt-6 space-y-10 border-t border-b border-gray-600 divide-y divide-gray-200">
+        <div className="pb-10 mt-6 space-y-10 border-b border-gray-600 divide-y divide-gray-600">
         {reviews.featured.map((review) => (
             <div key={review.id} className="pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8">
             <div className="lg:col-start-5 lg:col-span-8 xl:col-start-4 xl:col-span-9 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:items-start">

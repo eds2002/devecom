@@ -75,7 +75,7 @@ const Navigation = ({active, shopNav}) => {
   }, [lastScrollY]);
   return (
     <div className={`fixed z-20 w-full shadow-xl bg-[#16161a] ${show ? 'translate-y-[0%]' : 'translate-y-[-100%]'} transition duration-300`}>
-        {/* <Announcement/> */}
+        <Announcement/>
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div>
                 <div className="flex items-center justify-between h-16">

@@ -100,7 +100,7 @@ export default function ProductOverview() {
   let maxDays = maxDate.getDate() > month[maxDate.getMonth()].days ? maxDate.getDate() - month[maxDate.getMonth()].days : maxDate.getDate()
   let maxYear = maxDate.getFullYear()
   return (
-    <div className="px-4 bg-[#16161a] pt-[154px] pb-24 relative">
+    <div className="px-4 bg-[#16161a] pt-[154px] relative">
         {/* Product */}
         <section className="relative flex items-center justify-between h-full mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className = "grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-5">
@@ -151,7 +151,7 @@ export default function ProductOverview() {
                         </p>
                     </div>
 
-                    {/* Reviews */}
+                    {/* Reviews
                     <div className="mt-4">
                         <h2 className="sr-only">Reviews</h2>
                         <div className="flex items-center">
@@ -182,7 +182,7 @@ export default function ProductOverview() {
                                 </Link>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Phone select, Add to cart, quantity */}
                     <form className = "mt-4">
@@ -261,7 +261,7 @@ export default function ProductOverview() {
                         <p className = "text-xs font-bold text-white">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
                     </div>
 
-                    <div aria-labelledby="policies-heading" className="mt-10">
+                    <div aria-labelledby="policies-heading" className="mt-3">
                         {/* Policies */}
                         <h2 id="policies-heading" className="sr-only">
                         Our Policies

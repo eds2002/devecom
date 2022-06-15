@@ -27,7 +27,7 @@ const AnimateFeature = ({feature}) => {
       initial="hidden"
       animate={control}
     >
-      <h1 className = "flex items-center justify-center w-full h-full text-5xl font-bold text-center lg:text-6xl xl:text-7xl">{feature} </h1>
+      <h1 className = "flex items-center justify-center w-full h-full text-5xl font-bold text-center lg:text-6xl">{feature} </h1>
     </motion.div>
   )
 }

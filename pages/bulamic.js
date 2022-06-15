@@ -1,31 +1,11 @@
 import React from 'react'
-import { Announcement, Footer, Navigation, Shopnav,AnimateFeature } from '../components'
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { CheckCircleIcon } from '@heroicons/react/outline'
+import { Footer, Navigation,AnimateFeature } from '../components'
 import Link from 'next/link'
-import { motion, useAnimation } from 'framer-motion'
-
-
-const cubed = () => {
-    const control = useAnimation();
-    const {ref, inView} = useInView()
-
-    const boxVariant = {
-        visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-        hidden: { opacity: 0, scale: 0 }
-    }
-
-    useEffect(()=>{
-        if(inView){
-            control.start('visible')
-        }else{
-            control.start('hidden')
-        }
-    },[control, inView])
+import { motion } from 'framer-motion'
 
 
 
+const Bulamic = () => {
   return (
     <>
         <Navigation shopNav = 'true'/>
@@ -74,4 +54,4 @@ const cubed = () => {
   )
 }
 
-export default cubed
+export default Bulamic

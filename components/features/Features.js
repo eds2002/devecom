@@ -29,7 +29,7 @@ const Features = () => {
                         <h3 className="text-lg font-bold text-white lg:text-3xl">{feature.name}</h3>
                         <div className="mt-2 text-sm text-[#94a1b2]" dangerouslySetInnerHTML={{__html: feature.description}}/>
                         <div className = "flex flex-col items-center gap-3 my-8 lg:items-center lg:flex-row md:justify-start">
-                            <Link href="#">
+                            <Link href="/product/bula-mic">
                                 <a className="w-full px-8 py-2 text-sm font-medium text-center text-white bg-indigo-600 rounded-md md:text-base hover:bg-indigo-700 lg:w-auto active:bg-indigo-600">
                                     Shop now
                                 </a>

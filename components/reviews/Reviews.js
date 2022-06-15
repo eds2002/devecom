@@ -6,7 +6,7 @@ function classNames(...classes) {
   
 const Reviews = () => {
   return (
-    <section aria-labelledby="reviews-heading" className="relative px-4 mx-auto mt-16 sm:mt-24 max-w-7xl sm:px-6 lg:px-8" id = "reviews">
+    <section aria-labelledby="reviews-heading" className="relative px-4 mx-auto mt-16 sm:mt-24 max-w-7xl sm:px-6 lg:px-8 mb-36" id = "reviews">
         <h2 id="reviews-heading" className="text-lg font-medium text-white">
         Recent reviews
         </h2>

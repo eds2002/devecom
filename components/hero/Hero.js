@@ -6,7 +6,7 @@ const Hero = () => {
         <div className = "flex flex-col items-start justify-center w-full h-full pb-20 mt-[104px] absolute inset-0 z-10 px-4">
             <span className = "px-2 mb-3 text-sm font-medium text-white border-2 border-indigo-600 rounded-full">On Sale 15% Off</span>
             <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
-                The only mic you&apos;ll ever need
+                The last mic you&apos;ll ever need.
                 {/* <span className = "relative before:content-[''] before:bg-[#2cb67d]/50 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1] font-extrabold"> bulk </span> */}
             </h1>
             <div className="w-full mt-5 md:max-w-md sm:flex sm:justify-center md:mt-8">

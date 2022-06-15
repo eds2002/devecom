@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-base text-[#94a1b2]">
-              The last microphone you will ever need.
+              The last mic you&apos;ll ever need.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (

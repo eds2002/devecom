@@ -17,10 +17,10 @@ const Promo = () => {
                 <div className="relative w-full h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="relative flex flex-col items-start justify-end w-full h-full mx-auto">
                         <h2 className="max-w-3xl text-4xl font-medium tracking-tight text-white md:text-7xl">
-                            The only mic you&apos;ll ever need
+                            The last mic you&apos;ll ever need.
                         </h2>
                         <div className = "flex flex-col items-center w-full gap-3 my-8 sm:justify-start sm:flex-row ">
-                            <Link href = "#">
+                            <Link href = "/product/bula-mic">
                                 <a className="w-full px-8 py-3 text-sm font-medium text-center text-white bg-indigo-600 rounded-md md:text-base hover:bg-indigo-700 sm:w-auto active:bg-indigo-600 ">
                                     Shop Now
                                 </a>

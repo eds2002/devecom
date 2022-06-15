@@ -33,8 +33,8 @@ const Bulamic = () => {
                         viewport={{ once: false }}
                         transition={{delay:0.2}}
                     >
-                        <h3 className = "my-5 text-sm font-bold text-center lg:text-md xl:text-lg">The Bula Microphone</h3>
-                        <p className = "max-w-xl text-5xl font-bold text-center lg:text-6xl xl:text-7xl">The last mic you&apos;ll ever need.</p>
+                        <h3 className = "my-5 text-sm font-bold text-center lg:text-md xl:text-lg text-[#F7EBFF]/50">The Bula Microphone</h3>
+                        <p className = "max-w-xl text-5xl font-bold text-center lg:text-6xl xl:text-7xl text-[#F7EBFF]">The last mic you&apos;ll ever need.</p>
                         <div className = "flex max-w-lg my-10">
                         <Link href = "/product/bula-mic">
                             <a className = "py-4 text-sm font-medium text-white bg-indigo-600 rounded-lg px-14 md:px-[100px] flex md:inline justify-center items-center w-full">

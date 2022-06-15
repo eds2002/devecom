@@ -21,7 +21,7 @@ const AnimateFeature = ({feature}) => {
     }, [control, inView]);
   return (
     <motion.div
-      className="w-full text-[#EEC139] h-[350px] my-20"
+      className="w-full text-[#F7EBFF] h-[300px] my-20"
       ref={ref}
       variants={boxVariant}
       initial="hidden"

@@ -11,12 +11,9 @@ const Hero = () => {
             </h1>
             <div className="w-full mt-5 md:max-w-md sm:flex sm:justify-center md:mt-8">
                 <div className="flex items-center justify-start flex-1 w-full rounded-md gap-x-3">
-                    <Link href = "/product/bula-mic">
-                        <a className="relative flex w-[150px] sm:w-[250px] items-center justify-center py-2 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 md:text-lg transition active:bg-indigo-600">
+                    <Link href = "/product/bulamic">
+                        <a className="relative flex w-[150px] sm:w-[250px] items-center justify-center py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 md:text-lg transition active:bg-indigo-600">
                             <p className = "whitespace-nowrap">Shop now</p>
-                            <span className = "absolute right-0 flex items-center justify-center pr-3 font-bold">
-                                <ChevronRightIcon className = "w-5 h-5 flex-nowrap"/>
-                            </span>
                         </a>
                     </Link>
                     <Link href = "/bulamic">

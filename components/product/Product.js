@@ -2,6 +2,7 @@ import { useState } from "react"
 import { CheckIcon, QuestionMarkCircleIcon, StarIcon } from '@heroicons/react/solid'
 import { RadioGroup } from '@headlessui/react'
 import { ShieldCheckIcon } from '@heroicons/react/outline'
+import { storefront } from "../../utils"
 import Image from "next/image"
 const product = {
     name: 'Cubed bottle',
@@ -20,7 +21,7 @@ const product = {
 const reviews = { average: 4, totalCount: 1624 }
   
 
-const Product = () => {
+const Product = ({products}) => {
   const [selectedColor, setSelectedColor] = useState(product.sizes[0])
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -151,5 +152,7 @@ const Product = () => {
     </div>
   )
 }
+
+
 
 export default Product

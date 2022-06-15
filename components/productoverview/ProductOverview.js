@@ -231,7 +231,7 @@ export default function ProductOverview() {
                         </div>
                         <div className = "flex flex-col mt-6 gap-y-3">
                             <div className = "flex gap-x-3">
-                              <select name = "quantity" className = "font-light bg-[#242629] text-white rounded-md border-none">
+                              <select name = "quantity" className = "font-light bg-[#242629] text-white rounded-md border-none text-xs">
                                 <option value = '1'>Qty: 1</option>
                                 <option value = '2'>Qty: 2</option>
                                 <option value = '3'>Qty: 3</option>
@@ -240,7 +240,7 @@ export default function ProductOverview() {
                               </select>
                               <button
                               type="submit"
-                              className="flex items-center justify-center w-full px-8 py-2 text-base font-medium text-white transition bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                              className="flex items-center justify-center w-full py-2 text-xs font-medium text-white transition bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                               >
                               Add to cart
                               </button>

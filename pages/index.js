@@ -1,5 +1,6 @@
 import {Announcement, Navigation,Hero, Features, Product, Promo, KeyFeatures, Testimonials,Footer} from '../components/index'
 import Head from 'next/head'
+import { storefront } from '../utils'
 const footerNavigation = {
   products: [
     { name: 'Bags', href: '#' },
@@ -37,7 +38,9 @@ const footerNavigation = {
     { name: 'Terms', href: '#' },
   ],
 }
-export default function Home() {
+export default function Home({products}) {
+  console.log("test",products)
+  console.log("pkelase",process.env.NEXT_PUBLIC_ACCESS_TOKEN)
   return (
     <main className = "bg-[#16161a] h-[100vh]">
         <Head>
@@ -59,3 +62,42 @@ export default function Home() {
     </main>
   )
 }
+
+export async function getStaticProps(){
+  const {data} = await storefront(productsQuery)
+  return{
+    props:{
+      products:data.products
+    }
+  }
+}
+
+
+const gql = String.raw
+
+const productsQuery = gql`
+query Products {
+	products(first:1) {
+		edges {
+      node {
+        title
+        handle
+        tags
+        priceRange{
+          minVariantPrice{
+            amount
+					}
+        }
+        images(first:1){
+          edges{
+            node{
+              transformedSrc
+              altText
+						}
+					}
+				}
+			}
+		}    
+  }
+}
+`

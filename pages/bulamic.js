@@ -19,7 +19,7 @@ const Bulamic = () => {
         
         <section className = "relative flex items-center justify-center text-white bg-[#16161a]">
             <div className = "h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 py-[100px] w-full">
-                <div classname = "w-full">
+                <div className = "w-full">
                     
                     <AnimateFeature feature = "Innovative bluetooth technology."/>
                     <AnimateFeature feature = "Lightweight and portable for any situation."/>

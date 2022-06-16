@@ -6,6 +6,11 @@ import Link from 'next/link';
 import { storefront } from '../../utils';
 
 const ProductPage = ({product}) => {
+  const images = product.images.edges || null
+  const title = product.title || null
+  const desc = product.description || null
+  const price = product.priceRange.minVariantPrice.amount || null
+
   const [lastScrollY, setLastScrollY] = useState(0);
   const [popup, setPopup] = useState(false)
   
@@ -33,7 +38,7 @@ const ProductPage = ({product}) => {
   return (
     <main className = "relative bg-[#16161a]">
         <Navigation/>
-        <ProductOverview images = {product.images.edges} title = {product.title} description = {product.description} price = {product.priceRange.minVariantPrice.amount}/>
+        <ProductOverview images = {images} title = {title} description = {desc} price = {price}/>
         <ProductSpecs/>
         <Faq/>
         <Reviews/>
@@ -72,33 +77,6 @@ const ProductPage = ({product}) => {
 
 const gql = String.raw
 
-const productsQuery = gql`
-query Products {
-	products(first:1) {
-		edges {
-      node {
-        title
-        handle
-        tags
-        priceRange{
-          minVariantPrice{
-            amount
-					}
-        }
-        images(first:6){
-          edges{
-            node{
-              transformedSrc
-              altText
-						}
-					}
-				}
-			}
-		}    
-  }
-}
-`
-
 export async function getStaticPaths(){
   const {data} = await storefront(gql`
     {
@@ -111,8 +89,7 @@ export async function getStaticPaths(){
       }
     }
   `)
-  
-  // const paths = data.products.edges.map(product => ({params: {handle: product.node.handle}}))
+  console.log(data.products.edges.map(product => ({params: {product: product.node.handle}})))
   return{
     paths: data.products.edges.map(product => ({params: {product: product.node.handle}})),
     fallback:false,
@@ -121,7 +98,6 @@ export async function getStaticPaths(){
 
 export async function getStaticProps({params}){
   const {data} = await storefront(singleProductQuery, {handle:params.product})
-  console.log(data)
   return {
     props:{
       product:data.product

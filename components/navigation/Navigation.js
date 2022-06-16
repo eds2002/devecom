@@ -93,7 +93,7 @@ const Navigation = ({active, shopNav}) => {
                     <div className="z-50 flex-1 w-full h-full md:flex md:items-center">
                         <div className = "relative flex items-center justify-center w-full h-full select-none md:justify-start">
                             <Link href = "/">
-                                <Image src = {logo} width = {100} height = {50} priority className = "z-10 cursor-pointer"/>
+                                <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer"/>
                             </Link>
                         </div>
                     </div>

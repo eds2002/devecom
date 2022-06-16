@@ -16,7 +16,7 @@ const Hero = () => {
                             <p className = "whitespace-nowrap">Shop now</p>
                         </a>
                     </Link>
-                    <Link href = "/bulamic">
+                    <Link href = "/bula-mic">
                         <a className = "flex items-center justify-center text-white transition hover:text-gray-400">
                             Learn more
                         </a>

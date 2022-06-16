@@ -39,8 +39,6 @@ const footerNavigation = {
   ],
 }
 export default function Home({products}) {
-  console.log("test",products)
-  console.log("pkelase",process.env.NEXT_PUBLIC_ACCESS_TOKEN)
   return (
     <main className = "bg-[#16161a] h-[100vh]">
         <Head>

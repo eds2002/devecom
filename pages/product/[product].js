@@ -5,8 +5,7 @@ import { ArrowUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { storefront } from '../../utils';
 
-const ProductPage = ({products}) => {
-  const images = products.edges[0].node.images.edges
+const ProductPage = ({product}) => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [popup, setPopup] = useState(false)
   
@@ -34,7 +33,7 @@ const ProductPage = ({products}) => {
   return (
     <main className = "relative bg-[#16161a]">
         <Navigation/>
-        <ProductOverview images = {images}/>
+        <ProductOverview images = {product.images.edges} title = {product.title} description = {product.description} price = {product.priceRange.minVariantPrice.amount}/>
         <ProductSpecs/>
         <Faq/>
         <Reviews/>
@@ -61,14 +60,14 @@ const ProductPage = ({products}) => {
 }
 
 
-export async function getStaticProps(){
-  const {data} = await storefront(productsQuery)
-  return{
-    props:{
-      products:data.products
-    }
-  }
-}
+// export async function getStaticProps(){
+//   const {data} = await storefront(productsQuery)
+//   return{
+//     props:{
+//       products:data.products
+//     }
+//   }
+// }
 
 
 const gql = String.raw
@@ -99,6 +98,59 @@ query Products {
   }
 }
 `
+
+export async function getStaticPaths(){
+  const {data} = await storefront(gql`
+    {
+      products(first:6){
+        edges{
+          node{
+            handle
+          }
+        }
+      }
+    }
+  `)
+  
+  // const paths = data.products.edges.map(product => ({params: {handle: product.node.handle}}))
+  return{
+    paths: data.products.edges.map(product => ({params: {product: product.node.handle}})),
+    fallback:false,
+  }
+}
+
+export async function getStaticProps({params}){
+  const {data} = await storefront(singleProductQuery, {handle:params.product})
+  console.log(data)
+  return {
+    props:{
+      product:data.product
+    }
+  }
+}
+
+const singleProductQuery = gql`
+query SingleProduct($handle: String!) {
+  product(handle: $handle) {
+    title
+    description
+    priceRange {
+      minVariantPrice {
+        amount
+      }
+    }
+    images(first: 6) {
+      edges {
+        node {
+          transformedSrc
+          altText
+        }
+      }
+    }
+  }
+}
+`
+
 
 export default ProductPage
 

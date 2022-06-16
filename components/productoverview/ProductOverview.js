@@ -1,4 +1,4 @@
-import { useState,Fragment } from 'react'
+import { useState,Fragment, useRef, useEffect } from 'react'
 import { RadioGroup,Dialog,Transition } from '@headlessui/react'
 import { StarIcon, QuestionMarkCircleIcon} from '@heroicons/react/solid'
 import {reviews,policies} from '../../constants/constant'
@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from 'next/router'
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 
 function classNames(...classes) {
@@ -63,9 +64,14 @@ const product = {
 }
   
 
-export default function ProductOverview({images}) {
+export default function ProductOverview({images, title, description, price}) {
   const router = useRouter()
   let [isOpen, setIsOpen] = useState(false) 
+
+
+
+
+  
   function closeModal() {
     setIsOpen(false)
   }
@@ -146,10 +152,10 @@ export default function ProductOverview({images}) {
                 {/* Information */}
                 <div className = "md:col-start-3 md:col-end-5 lg:col-start-4 lg:col-end-5">
                     <div className="flex items-center mt-8 gap-x-3">
-                        <h1 className="text-lg font-semibold text-white ">Bula Microphone</h1>
+                        <h1 className="text-lg font-semibold text-white ">{title}</h1>
                         <div className = "w-[0.5px] h-5 text-white bg-white"></div>
                         <p className="flex items-center justify-center text-lg font-semibold text-white gap-x-3">
-                          $26.99
+                          ${price}
                         </p>
                     </div>
 
@@ -257,10 +263,9 @@ export default function ProductOverview({images}) {
                     <div className="mt-4 text-[#94a1b2] bg-[#242629] p-6 rounded-xl">
                         <h2 className = "sr-only" id = 'product-description'>Product Description</h2>
                         {/* Description */}
-                        <h2 className="mb-2 text-sm font-semibold text-white ">The highest quality phone microphone</h2>
-                        <p className = "mb-5 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
-                        <p className = "mb-5 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fuga rerum vel suscipit esse, harum vero at, blanditiis ad omnis alias culpa quidem itaque. At eveniet illo odit corporis ipsa.</p>
-                        <p className = "text-xs font-bold text-white">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
+                        <h2 className="mb-2 text-xs font-semibold text-white ">The highest quality phone microphone</h2>
+                        <p className = "mb-5 text-sm">{description}</p>
+                        <p className = "text-xs font-medium text-gray-500">Due to ongoing COVID-19 delays, shipping may take 4-6 weeks.</p>
                     </div>
 
                     <div aria-labelledby="policies-heading" className="mt-3">
@@ -312,7 +317,8 @@ export default function ProductOverview({images}) {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="relative flex overflow-scroll max-w-7xl snap-x snap-mandatory scroll-smooth scrollbar">
-                  <div className = " pointer-events-none flex gap-x-3 before:shrink-0 lg:before:w-[15vw] after:shrink-0 after:w-[30vw]">
+                  <motion.div className = " flex gap-x-3 before:shrink-0 lg:before:w-[15vw] after:shrink-0 after:w-[30vw]"
+                  >
                     {images.map((image,id)=>(
                         <div key = {id} className = "h-[500px] shrink-0 snap-center relative w-[400px] sm:w-[500px] md:w-[700px]">
                             <Image 
@@ -324,7 +330,7 @@ export default function ProductOverview({images}) {
                                 />
                         </div>
                     ))}
-                  </div>
+                  </motion.div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

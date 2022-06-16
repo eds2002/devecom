@@ -1,10 +1,12 @@
-import {Announcement, Faq, Footer, Navigation,ProductOverview, ProductSpecs, Reviews} from '../../components'
+import {Faq, Footer, Navigation,ProductOverview, ProductSpecs, Reviews} from '../../components'
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
+import { storefront } from '../../utils';
 
-const ProductPage = () => {
+const ProductPage = ({products}) => {
+  const images = products.edges[0].node.images.edges
   const [lastScrollY, setLastScrollY] = useState(0);
   const [popup, setPopup] = useState(false)
   
@@ -32,7 +34,7 @@ const ProductPage = () => {
   return (
     <main className = "relative bg-[#16161a]">
         <Navigation/>
-        <ProductOverview/>
+        <ProductOverview images = {images}/>
         <ProductSpecs/>
         <Faq/>
         <Reviews/>
@@ -58,4 +60,45 @@ const ProductPage = () => {
   )
 }
 
+
+export async function getStaticProps(){
+  const {data} = await storefront(productsQuery)
+  return{
+    props:{
+      products:data.products
+    }
+  }
+}
+
+
+const gql = String.raw
+
+const productsQuery = gql`
+query Products {
+	products(first:1) {
+		edges {
+      node {
+        title
+        handle
+        tags
+        priceRange{
+          minVariantPrice{
+            amount
+					}
+        }
+        images(first:6){
+          edges{
+            node{
+              transformedSrc
+              altText
+						}
+					}
+				}
+			}
+		}    
+  }
+}
+`
+
 export default ProductPage
+

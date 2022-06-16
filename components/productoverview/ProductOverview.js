@@ -63,7 +63,7 @@ const product = {
 }
   
 
-export default function ProductOverview() {
+export default function ProductOverview({images}) {
   const router = useRouter()
   let [isOpen, setIsOpen] = useState(false) 
   function closeModal() {
@@ -103,41 +103,43 @@ export default function ProductOverview() {
     <div className="px-4 bg-[#16161a] pt-[154px] relative">
         {/* Product */}
         <section className="relative flex items-center justify-between h-full mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className = "grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-5">
+            <div className = "grid w-full grid-cols-1 overflow-hidden md:grid-cols-3 lg:grid-cols-4 gap-x-5">
                 {/* Product images */}
-                <div className = "col-span-1 md:col-span-2 lg:col-span-3 h-full md:h-[1000px]rounded-lg">
-                    <div className = "flex flex-col gap-3">
-                        <div className = "grid grid-cols-2 gap-3">
-                            <div className="w-full col-span-2 overflow-hidden hover:scale-[1.01] rounded-lg cursor-pointer aspect-w-3 aspect-h-2 transition">
+                <div className = "h-full col-span-1 overflow-hidden rounded-lg md:col-span-2 lg:col-span-3">
+                    <div className = "flex flex-col ">
+                        <div className = "grid grid-cols-3 gap-2">
+                            {/* Featured image */}
+                            <div className="w-full col-span-3 lg:col-span-4 overflow-hidden hover:scale-[1.01] rounded-lg cursor-pointer aspect-w-3 aspect-h-2 transition">
                                 <Image
-                                src="https://images.pexels.com/photos/1154861/pexels-photo-1154861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                alt="Drawstring top with elastic loop closure and textured interior padding."
+                                src={images[0].node.transformedSrc}
+                                alt={images[0].node.altText}
                                 className="object-cover object-center w-full h-full"
                                 onClick = {()=>openModal(0)}
                                 layout = 'fill'
                                 priority
                                 />
-                            </div>
-                            <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2 hover:scale-[1.01] cursor-pointer transition ">
-                                <Image
-                                src="https://images.pexels.com/photos/932401/pexels-photo-932401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                alt="Drawstring top with elastic loop closure and textured interior padding."
-                                className="object-cover object-center w-full h-full"
-                                onClick = {()=>openModal(1)}
-                                layout = 'fill'
-                                priority
-                                />
-                            </div>
-                            <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2 hover:scale-[1.01] cursor-pointer transition">
-                                <Image
-                                src="https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                                alt="Drawstring top with elastic loop closure and textured interior padding."
-                                className="object-cover object-center w-full h-full"
-                                onClick = {()=>openModal(2)}
-                                layout = 'fill'
-                                priority
-                                />
-                            </div>
+                            </div> 
+
+                            {/* Sub images */}
+                            {images.map((image,index)=>(
+                              <>
+
+                                {index != 0  ? 
+                                  <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2 hover:scale-[1.01] row-start-2 cursor-pointer transition h-[100px]">
+                                      <Image
+                                      src={image.node.transformedSrc}
+                                      alt={image.node.altText}
+                                      className="object-cover object-center w-full h-full"
+                                      onClick = {()=>openModal(1)}
+                                      layout = 'fill'
+                                      priority
+                                      />
+                                  </div>
+                                :
+                                  ''
+                                }
+                              </>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -311,12 +313,12 @@ export default function ProductOverview() {
               >
                 <Dialog.Panel className="relative flex overflow-scroll max-w-7xl snap-x snap-mandatory scroll-smooth scrollbar">
                   <div className = " pointer-events-none flex gap-x-3 before:shrink-0 lg:before:w-[15vw] after:shrink-0 after:w-[30vw]">
-                    {product.images.map((image,id)=>(
+                    {images.map((image,id)=>(
                         <div key = {id} className = "h-[500px] shrink-0 snap-center relative w-[400px] sm:w-[500px] md:w-[700px]">
                             <Image 
                                 id = {`image-${id}`}
-                                src = {image.imageSrc} 
-                                alt = {image.imageAlt}
+                                src = {image.node.transformedSrc} 
+                                alt = {image.node.altText}
                                 layout = 'fill'
                                 className="object-cover object-center w-full h-full pointer-events-none rounded-xl"   
                                 />

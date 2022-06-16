@@ -115,11 +115,11 @@ export default function ProductOverview({images, title, description, price}) {
                     <div className = "flex flex-col ">
                         <div className = "grid grid-cols-3 gap-2">
                             {/* Featured image */}
-                            <div className="w-full col-span-3 lg:col-span-4 overflow-hidden hover:scale-[1.01] rounded-lg cursor-pointer aspect-w-3 aspect-h-2 transition">
+                            <div className="w-full col-span-4 overflow-hidden hover:scale-[1.01] rounded-lg cursor-pointer aspect-w-3 aspect-h-2 transition bg-[#101013]">
                                 <Image
                                 src={images[0].node.transformedSrc}
                                 alt={images[0].node.altText}
-                                className="object-cover object-center w-full h-full"
+                                className="object-contain w-full h-full"
                                 onClick = {()=>openModal(0)}
                                 layout = 'fill'
                                 priority
@@ -131,13 +131,13 @@ export default function ProductOverview({images, title, description, price}) {
                               <>
 
                                 {index != 0  ? 
-                                  <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2 hover:scale-[1.01] row-start-2 cursor-pointer transition h-[100px]">
+                                  <div className="w-full overflow-hidden rounded-lg aspect-w-3 aspect-h-2 hover:scale-[1.01] row-start-2 cursor-pointer transition bg-[#101013] h-[100px]">
                                       <Image
                                       src={image.node.transformedSrc}
                                       alt={image.node.altText}
-                                      className="object-cover object-center w-full h-full"
+                                      className="object-contain w-full"
                                       onClick = {()=>openModal(1)}
-                                      layout = 'fill'
+                                      layout='fill'
                                       priority
                                       />
                                   </div>
@@ -320,13 +320,13 @@ export default function ProductOverview({images, title, description, price}) {
                   <motion.div className = " flex gap-x-3 before:shrink-0 lg:before:w-[15vw] after:shrink-0 after:w-[30vw]"
                   >
                     {images.map((image,id)=>(
-                        <div key = {id} className = "h-[500px] shrink-0 snap-center relative w-[400px] sm:w-[500px] md:w-[700px]">
+                        <div key = {id} className = "h-[500px] shrink-0 snap-center relative w-[400px] sm:w-[500px] md:w-[700px] bg-[#101013] rounded-xl">
                             <Image 
                                 id = {`image-${id}`}
                                 src = {image.node.transformedSrc} 
                                 alt = {image.node.altText}
                                 layout = 'fill'
-                                className="object-cover object-center w-full h-full pointer-events-none rounded-xl"   
+                                className="object-contain w-full h-full pointer-events-none rounded-xl"   
                                 />
                         </div>
                     ))}

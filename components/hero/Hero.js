@@ -18,7 +18,7 @@ const Hero = () => {
                                 <p className = "whitespace-nowrap">Shop now</p>
                             </a>
                         </Link>
-                        <Link href = "/bula-mic">
+                        <Link href = "/bulamic">
                             <a className = "flex items-center justify-center my-2 text-xs text-white transition hover:text-gray-400">
                                 Learn more
                             </a>
@@ -26,8 +26,8 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className = 'flex items-center justify-center flex-1 '>
-                <div className = " w-[75%] md:w-full ">
+            <div className = 'flex items-center justify-center flex-1'>
+                <div className = " w-[50%] md:w-full">
                     <Image src = {heroImg}/>
                 </div>
             </div>

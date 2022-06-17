@@ -1,15 +1,46 @@
 import {Faq, Footer, Navigation,ProductOverview, ProductSpecs, Reviews} from '../../components'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import { storefront } from '../../utils';
+import { viewCart } from '../../utils/getCart';
 
-const ProductPage = ({product}) => {
-  const images = product.images.edges || null
-  const title = product.title || null
-  const desc = product.description || null
-  const price = product.priceRange.minVariantPrice.amount || null
+const ProductPage = ({product, cartId, checkoutURL}) => {
+  const [cart, setCart] = useState({})
+  const [userCart, setUserCart] = useState({})
+  // TODO Set information necessary for page to load.
+  const variants = product.variants?.edges
+  const images = product.images.edges 
+  const title = product.title 
+  const desc = product.description 
+  const price = product.priceRange.minVariantPrice.amount 
+
+  useEffect(()=>{
+    (async ()=>{
+        // TODO Check if cart exists, if it does not create a cart
+        const cartExists = window.localStorage.getItem('bula-cart')
+        if(!cartExists){
+          // TODO Doesn't exist then create a cart for the user, store cart in localstorage
+          const {data} = await storefront(createCart)
+          const cart = [
+            {id:data.cartCreate.cart.id},
+            {url:data.cartCreate.cart.checkoutUrl}
+          ]
+          window.localStorage.setItem('bula-cart', JSON.stringify(cart))
+        }else{
+          // TODO A cart exists, modify current cart 
+          const cart = JSON.parse(window.localStorage.getItem('bula-cart'))
+          const data = await viewCart(cart[0].id)
+          setUserCart(data?.cart)
+        }
+      })();
+  },[])
+
+
+
+
+
 
   const [lastScrollY, setLastScrollY] = useState(0);
   const [popup, setPopup] = useState(false)
@@ -26,19 +57,19 @@ const ProductPage = ({product}) => {
       setLastScrollY(window.scrollY); 
     }
   };
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controlPopup);
-      // cleanup function
-      return () => {
-        window.removeEventListener('scroll', controlPopup);
-      };
-    }
-  }, [lastScrollY]);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     window.addEventListener('scroll', controlPopup);
+  //     // cleanup function
+  //     return () => {
+  //       window.removeEventListener('scroll', controlPopup);
+  //     };
+  //   }
+  // }, [lastScrollY]);
   return (
     <main className = "relative bg-[#16161a]">
         <Navigation/>
-        <ProductOverview images = {images} title = {title} description = {desc} price = {price}/>
+        <ProductOverview images = {images} title = {title} description = {desc} price = {price} variants = {variants}/>
         <ProductSpecs/>
         <Faq/>
         <Reviews/>
@@ -89,7 +120,6 @@ export async function getStaticPaths(){
       }
     }
   `)
-  console.log(data.products.edges.map(product => ({params: {product: product.node.handle}})))
   return{
     paths: data.products.edges.map(product => ({params: {product: product.node.handle}})),
     fallback:false,
@@ -108,11 +138,20 @@ export async function getStaticProps({params}){
 const singleProductQuery = gql`
 query SingleProduct($handle: String!) {
   product(handle: $handle) {
+    id
     title
     description
     priceRange {
       minVariantPrice {
         amount
+      }
+    }
+    variants(first:2){
+      edges {
+        node {
+          id
+          title
+        }
       }
     }
     images(first: 6) {
@@ -124,6 +163,17 @@ query SingleProduct($handle: String!) {
       }
     }
   }
+}
+`
+
+const createCart = gql`
+mutation CreateCart {
+	cartCreate{
+    cart{
+      checkoutUrl
+      id
+		}
+	}
 }
 `
 

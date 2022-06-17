@@ -2,74 +2,26 @@ import { useState,Fragment, useRef, useEffect } from 'react'
 import { RadioGroup,Dialog,Transition } from '@headlessui/react'
 import { StarIcon, QuestionMarkCircleIcon} from '@heroicons/react/solid'
 import {reviews,policies} from '../../constants/constant'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from 'next/router'
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-
+import {addToCart} from '../../utils/addToCart'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const product = {
-    name: 'Basic Tee',
-    price: '$35',
-    rating: 3.9,
-    reviewCount: 512,
-    href: '#',
-    images: [
-      {
-        id: 1,
-        imageSrc: 'https://images.pexels.com/photos/1154861/pexels-photo-1154861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-        imageAlt: "Back of women's Basic Tee in black.",
-        primary: true,
-      },
-      {
-        id: 2,
-        imageSrc: 'https://images.pexels.com/photos/932401/pexels-photo-932401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-        imageAlt: "Side profile of women's Basic Tee in black.",
-        primary: false,
-      },
-      {
-        id: 3,
-        imageSrc: 'https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-        imageAlt: "Front of women's Basic Tee in black.",
-        primary: false,
-      },
+export default function ProductOverview({images, title, description, price,variants}) {
+  const productVariants = {
+    connectorType:[
+      { name: 'iOS', description: variants[0]?.node?.title, variantId: variants[0]?.node?.id},
+      { name: 'Android', description: variants[1]?.node?.title, variantId:variants[1]?.node?.id},
     ],
-    colors: [
-      { name: 'Black', bgColor: 'bg-gray-900', selectedColor: 'ring-gray-900' },
-      { name: 'Heather Grey', bgColor: 'bg-gray-400', selectedColor: 'ring-gray-400' },
-      { name: 'Heather Grey', bgColor: 'bg-blue-400', selectedColor: 'ring-blue-400' },
-      { name: 'Heather Grey', bgColor: 'bg-red-400', selectedColor: 'ring-red-400' },
-    ],
-    connectorType: [
-      { name: 'iOS', description: 'Lightning' },
-      { name: 'Android', description: 'USB Type C' },
-    ],
-    description: `
-      <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p>
-      <p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>
-    `,
-    details: [
-      'Only the best materials',
-      'Ethically and locally made',
-      'Pre-washed and pre-shrunk',
-      'Machine wash cold with similar colors',
-    ],
-}
-  
-
-export default function ProductOverview({images, title, description, price}) {
+  }
+  const [selectedQty, setSelectedQty] = useState(1)
+  const [selectedCable, setSelectedCable] = useState(null) 
   const router = useRouter()
   let [isOpen, setIsOpen] = useState(false) 
-
-
-
 
   
   function closeModal() {
@@ -81,7 +33,6 @@ export default function ProductOverview({images, title, description, price}) {
     router.push(`#image-${hrefId}`)
   }
 
-  const [selectedCable, setSelectedCable] = useState(product.connectorType[0])
     
   const month = [{month:"January", days: 31},{month:"February", days: 28},{month:"March", days:31},{month:"April", days:30},{month:"May", days:31},{month:"June", days:30},{month:"July", days:31},{month:"August",days:31},{month:"September",days:30},{month:"October",days:31},{month:"November",days:30},{month:"December",days:31}];
   let minDaysToAdd = 14; //Max amount of days
@@ -105,6 +56,19 @@ export default function ProductOverview({images, title, description, price}) {
   let maxMonth = month[maxDate.getMonth()].month
   let maxDays = maxDate.getDate() > month[maxDate.getMonth()].days ? maxDate.getDate() - month[maxDate.getMonth()].days : maxDate.getDate()
   let maxYear = maxDate.getFullYear()
+
+
+  const handleSubmit = async (e) =>{
+    // TODO prevent default, find the index of selected cable and add to shopify storefront cart
+    e.preventDefault()
+    const indexOfVariant = productVariants.connectorType.findIndex(cable => cable.name === `${selectedCable}`)
+    // TODO if variable returns a number other than -1 (Meaning no value was found), query to shopify
+    if(indexOfVariant != -1){
+      await addToCart('gid://shopify/Cart/010add7a56f8f774b915f0de83a0bfbe', JSON.parse(selectedQty) , productVariants.connectorType[indexOfVariant].variantId)
+      console.log('success')
+    }
+  }
+
   return (
     <div className="px-4 bg-[#16161a] pt-[154px] relative">
         {/* Product */}
@@ -193,19 +157,19 @@ export default function ProductOverview({images, title, description, price}) {
                     </div> */}
 
                     {/* Phone select, Add to cart, quantity */}
-                    <form className = "mt-4">
-                        {/* Color picker */}
+                    <form className = "mt-4" onSubmit={(e)=>handleSubmit(e)}>
+                        {/* Cable picker */}
                         <div>
                             <div className="w-full sm:flex sm:justify-between">
                               {/* Size selector */}
                               <RadioGroup value={selectedCable} onChange={setSelectedCable} className = "w-full">
-                                <RadioGroup.Label className="block text-sm font-medium text-white ">Connector: <span className = "font-normal text-gray-400">{selectedCable.name}</span></RadioGroup.Label>
+                                <RadioGroup.Label className="block text-sm font-medium text-white ">Connector: <span className = "font-normal text-gray-400">{selectedCable}</span></RadioGroup.Label>
                                 <div className="flex mt-2 gap-x-3">
-                                  {product.connectorType.map((connector) => (
+                                  {productVariants.connectorType.map((connector) => (
                                     <RadioGroup.Option
                                       as="div"
                                       key={connector.name}
-                                      value={connector}
+                                      value={connector.name}
                                       className={({ active }) =>
                                         classNames(
                                           active ? 'ring-1 ring-indigo-600' : '',
@@ -239,7 +203,7 @@ export default function ProductOverview({images, title, description, price}) {
                         </div>
                         <div className = "flex flex-col mt-6 gap-y-3">
                             <div className = "flex gap-x-3">
-                              <select name = "quantity" className = "font-light bg-[#242629] text-white rounded-md border-none text-xs">
+                              <select name = "quantity" className = "font-light bg-[#242629] text-white rounded-md border-none text-xs" onChange={(e)=>setSelectedQty(e.target.value)}>
                                 <option value = '1'>Qty: 1</option>
                                 <option value = '2'>Qty: 2</option>
                                 <option value = '3'>Qty: 3</option>

@@ -28,7 +28,7 @@ const Hero = () => {
             </div>
             <div className = 'flex items-center justify-center flex-1'>
                 <div className = " w-[50%] md:w-full">
-                    <Image src = {heroImg}/>
+                    <Image src = {heroImg} priority/>
                 </div>
             </div>
         </div>

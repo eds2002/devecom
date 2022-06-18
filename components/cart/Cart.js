@@ -73,7 +73,7 @@ const Cart = ({cart}) => {
       }
 
   return (
-    <div className = "flex z-[999] sm:relative items-center justify-center ring-0">
+    <div className = "flex z-[99999999999] sm:relative items-center justify-center ring-0 ]">
         <Popover className="flow-root text-sm sm:ml-8">
             <Popover.Button className="flex items-center p-2 -m-2 group" ref = {buttonRef}>
                 {itemsInCart?.length > 0 ? 
@@ -98,7 +98,7 @@ const Cart = ({cart}) => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
             >
-                <Popover.Panel className="absolute top-24 sm:top-8 inset-x-0 mt-px pb-6 bg-[#242629] shadow-lg sm:px-2  sm:left-auto sm:right-0 sm:mt-3 sm:-mr-1.5 sm:w-80 sm:rounded-lg">
+                <Popover.Panel className="absolute top-24 rounded-bl-xl rounded-br-xl sm:top-8 inset-x-0 mt-px pb-6 bg-[#242629] shadow-lg sm:px-2  sm:left-auto sm:right-0 sm:mt-3 sm:-mr-1.5 sm:w-80 sm:rounded-lg">
                     <h2 className="sr-only">Shopping Cart</h2>
 
                     <form className="max-w-2xl px-4 mx-auto divide-y divide-gray-700" onSubmit={(e)=>e.preventDefault()}>
@@ -114,7 +114,7 @@ const Cart = ({cart}) => {
                                     <div>
                                         <h1 className= "flex flex-col text-white">
                                             <span className = "text-xl font-bold text-center lg:text-2xl">It&apos;s lonely in here.</span>
-                                            <span className = "mb-2 text-sm text-center text-gray-400">Let&apos;s help you shop the greatest and latest.</span>
+                                            <span className = "mb-2 text-sm text-center text-gray-400">Let&apos;s help you shop for the latest and greatest.</span>
                                         </h1>
                                         <Link href = "/product/bula-mic">
                                             <button className = "w-full py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg">Go Shopping</button>
@@ -182,19 +182,19 @@ const Cart = ({cart}) => {
                                 <p className = "text-sm text-white">Free</p>
                             </div>
                             </ul>
-                            <ul role = "list" className = "flex flex-col py-6 gap-y-3">
-                            <div className = "flex items-center justify-between">
-                                <p className = "text-[#94a1b2] text-sm">Total</p>
-                                <p className = "flex items-center justify-center text-white gap-x-2">
-                                    <span className = "text-xs text-gray-600">{userCart?.estimatedCost?.totalAmount?.currencyCode}</span>
-                                    <span className = "text-lg ">
-                                        {userCart.length != 0 && ((JSON.parse(userCart?.estimatedCost?.totalAmount?.amount)).toLocaleString('en-US', {
-                                            style:'currency',
-                                            currency: 'USD',
-                                        }))}
-                                    </span>
-                                </p>
-                            </div>
+                            <ul role = "list" className = "flex flex-col py-3 gap-y-3">
+                                <div className = "flex items-center justify-between">
+                                    <p className = "text-[#94a1b2] text-sm">Total</p>
+                                    <p className = "flex items-center justify-center text-white gap-x-2">
+                                        <span className = "text-xs text-gray-600">{userCart?.estimatedCost?.totalAmount?.currencyCode}</span>
+                                        <span className = "text-lg ">
+                                            {userCart.length != 0 && ((JSON.parse(userCart?.estimatedCost?.totalAmount?.amount)).toLocaleString('en-US', {
+                                                style:'currency',
+                                                currency: 'USD',
+                                            }))}
+                                        </span>
+                                    </p>
+                                </div>
                             </ul>
                             <button
                                 type="submit"

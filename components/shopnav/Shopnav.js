@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Shopnav = () => {
   return (
-      <div className = "absolute flex items-center justify-center w-full h-12 shadow-xl bg-[#242629]">
+      <div className = "absolute flex items-center justify-center w-full h-12 shadow-xl bg-[#242629] z-[-1]">
         <div className="flex items-center justify-between flex-1 h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 max-h-10">
             <p className = "font-bold text-white">Bula Mic</p>
             <Link href = "/product/cubed">

@@ -7,7 +7,7 @@ const Productspecs = () => {
       <div className="py-24 mx-auto max-w-7xl sm:py-32 sm:px-2 lg:px-4">
         <div className="max-w-2xl px-4 mx-auto lg:max-w-none">
           <div className="max-w-3xl">
-            <h2 className="font-semibold text-[#94a1b2]">Bula Micrphone</h2>
+            <h2 className="font-semibold text-[#94a1b2]">The Bula Mic</h2>
             <p className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">The little details matter</p>
             <p className="mt-4 text-[#94a1b2]">
                 Don&apos;t be fooled by the Bula Microphones tiny frame. It is <b className = "text-gray-300">packed</b> with features that make it one of the most <b className = "text-gray-300">powerful</b> microphones on the market.
@@ -25,8 +25,8 @@ const Productspecs = () => {
                   <p className="mt-2 text-sm text-[#94a1b2]">{feature.description}</p>
                 </div>
                 <div className="flex-auto lg:col-span-7 xl:col-span-8">
-                  <div className="overflow-hidden bg-gray-100 rounded-lg aspect-w-5 aspect-h-2">
-                    <img src={feature.imageSrc} alt={feature.imageAlt} className="object-cover object-center" />
+                  <div className="overflow-hidden bg-black rounded-lg aspect-w-5 aspect-h-2">
+                    <Image src={feature.imageSrc} layout = 'fill' alt={feature.imageAlt} className="object-cover object-center" />
                   </div>
                 </div>
               </div>

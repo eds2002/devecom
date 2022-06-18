@@ -127,16 +127,15 @@ export default function ProductOverview({images, title, description, price,varia
                 </div>
                 {/* Information */}
                 <div className = "md:col-start-3 md:col-end-5 lg:col-start-4 lg:col-end-5">
-                    <div className="flex items-center mt-8 gap-x-3">
-                        <h1 className="text-lg font-semibold text-white ">{title}</h1>
-                        <div className = "w-[0.5px] h-5 text-white bg-white"></div>
-                        <p className="flex items-center justify-center text-lg font-semibold text-white gap-x-3">
+                    <div className="flex items-center justify-between mt-8 gap-x-3">
+                        <h1 className="text-xl text-white ">{title}</h1>
+                        <p className="flex items-center justify-center text-lg font-medium text-white gap-x-3">
                           ${price}
                         </p>
                     </div>
 
                     {/* Reviews */}
-                    <div className="mt-4">
+                    {/* <div className="mt-4">
                         <h2 className="sr-only">Reviews</h2>
                         <div className="flex items-center">
                             <p className="text-sm text-white">
@@ -148,7 +147,7 @@ export default function ProductOverview({images, title, description, price,varia
                                     <StarIcon
                                     key={rating}
                                     className={classNames(
-                                        reviews.average > rating ? 'text-indigo-600' : 'text-gray-400',
+                                        reviews.average > rating ? 'text-[#FEF7FF]' : 'text-gray-400',
                                         'h-5 w-5 flex-shrink-0'
                                     )}
                                     aria-hidden="true"
@@ -160,13 +159,13 @@ export default function ProductOverview({images, title, description, price,varia
                             </div>
                             <div className="flex ml-4">
                                 <Link href = "#reviews">
-                                  <a className="text-xs font-medium text-[#2cb67d] hover:text-[#2cb67d]/50">
+                                  <a className="text-xs font-medium text-[#FEF7FF] hover:text-[#FEF7FF]/50 transition">
                                       See all {reviews.featured.length} reviews
                                   </a>
                                 </Link>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Phone select, Add to cart, quantity */}
                     <form className = "mt-4" onSubmit={(e)=>handleSubmit(e)}>
@@ -175,7 +174,6 @@ export default function ProductOverview({images, title, description, price,varia
                             <div className="w-full sm:flex sm:justify-between">
                               {/* Size selector */}
                               <RadioGroup value={selectedCable} onChange={setSelectedCable} className = "w-full">
-                                <RadioGroup.Label className="block text-sm font-medium text-white ">Connector: <span className = "font-normal text-gray-400">{selectedCable}</span></RadioGroup.Label>
                                 <div className="flex mt-2 gap-x-3">
                                   {productVariants.connectorType.map((connector) => (
                                     <RadioGroup.Option

@@ -11,7 +11,7 @@ function classNames(...classes) {
   
 const Testimonials = () => {
     let settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -20,16 +20,12 @@ const Testimonials = () => {
         swipeToSlide: true,
       };
   return (
-      <div className = "w-full overflow-hidden bg-[#16161a]">
-
-        <div className="relative max-w-2xl px-4 pb-24 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className = "w-full overflow-hidden bg-[#16161a] py-24">
+        <div className="relative max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className = "flex flex-col items-center justify-center">
                 <h1 className = "text-3xl font-bold text-center text-white sm:text-4xl">
-                    Take a look at what our
-                    <span className = "relative before:content-[''] before:bg-[#2cb67d]/50 before:absolute before:left-0 before:right-0 before:bottom-0 before:h-[35%]  before:rounded-xl before:z-[-1]"> customers </span>
-                    have to say.
+                    Take a look at what our customers have to say
                 </h1>
-                <p className = "max-w-xs my-3 text-sm text-center text-[#94a1b2] sm:max-w-lg sm:text-md md:text-lg lg:text-xl">We value our customers and appreciate hearing how we can improve and better support you in the future.</p>
             </div>
 
             <Slider {...settings}>
@@ -50,13 +46,13 @@ const Testimonials = () => {
                                         key={index}
                                         className={classNames(
                                             review.rating > index ? 'text-indigo-600' : 'text-gray-400',
-                                            'h-8 w-8 flex-shrink-0'
+                                            'h-4 w-4 flex-shrink-0'
                                         )}
                                         aria-hidden="true"
                                         />
                                     ))}
                                 </div>
-                                <p className = "max-w-4xl mt-5 text-md font-medium text-center text-[#94a1b2] md:text-xl">{review.review}</p>
+                                <p className = "max-w-4xl mt-5 text-md  text-center text-[#94a1b2] md:text-xl">{review.review}</p>
                             </div>
                         </div>
                     </div>

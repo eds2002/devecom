@@ -6,11 +6,11 @@ const Features = () => {
     return classes.filter(Boolean).join(' ')
   }
   return (
-    <div className = "bg-[#16161a]">
+    <div className = "bg-[#000000] pb-24">
         <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
                 <h2 className="py-24 text-5xl font-bold tracking-tight text-white lg:text-6xl">
-                Removing all the bulk and giving you quality.
+                    Astonishingly small and powerful
                 </h2>
             </div>
 
@@ -30,12 +30,12 @@ const Features = () => {
                         <div className="mt-2 text-sm text-[#94a1b2]" dangerouslySetInnerHTML={{__html: feature.description}}/>
                         <div className = "flex flex-col items-center gap-3 my-8 lg:items-center lg:flex-row md:justify-start">
                             <Link href="/product/bula-mic">
-                                <a className="w-full px-8 py-2 text-sm font-medium text-center text-white bg-indigo-600 rounded-md md:text-base hover:bg-indigo-700 lg:w-auto active:bg-indigo-600">
+                                <a className="w-full px-10 py-2 text-xs font-medium text-center text-white bg-indigo-600 rounded-md hover:bg-indigo-700 lg:w-auto active:bg-indigo-600">
                                     Shop now
                                 </a>
                             </Link>
                             <Link href = "/bula-mic" >
-                                <a className = "text-xs sm:text-[15px] text-white hover:text-gray-500 transition cursor-pointer">
+                                <a className = "text-xs text-white transition cursor-pointer hover:text-gray-500">
                                     Learn more
                                 </a>
                             </Link>

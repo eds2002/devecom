@@ -60,6 +60,7 @@ const ProductPage = ({product}) => {
             </motion.div>
           )}
         </AnimatePresence>
+        <Footer/>
     </main>
   )
 }

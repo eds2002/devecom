@@ -1,4 +1,6 @@
 import { GlobeIcon, BadgeCheckIcon } from '@heroicons/react/outline'
+import featureOne from '../assets/featureimage1.webp'
+import featureTwo from '../assets/featureimage2.webp'
 export const reviews = {
     average: 4.2,
     featured: [
@@ -113,24 +115,17 @@ export const incentives = [
 
 export const features = [
   {
-    name: 'All In One Solution',
+    name: 'Get rid of the bulk',
     description:
       '<p>No longer carry excessive gears ever again. We offer the best <b>all-in-one</b> solution for <b>shooting high quality audio</b> at a low price!</p>',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg',
+    imageSrc: featureOne,
     imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
   },
   {
     name: 'Lightweight and Portable',
     description:
       '<p>Never carry heaving equipment again! Our microphones are <b>quick and easy</b> to setup with <b>bluetooth connection</b>.</p>',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
-    imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
-  },
-  {
-    name: 'Exceptional Wireless System',
-    description:
-      '<p>Our rechargeable battery supports up to <b>10 hours of working time</b>.</p>',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg',
+    imageSrc: featureTwo,
     imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },
 ]

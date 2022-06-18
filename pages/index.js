@@ -52,11 +52,11 @@ export default function Home({products}) {
         </Head>
         <Navigation active = "home"/>
         <Hero/>
-        <KeyFeatures/>
+        {/* <KeyFeatures/> */}
         <Features/>
         <Promo/> 
         <Testimonials/>
-        {/* <Footer/> */}
+        <Footer/>
     </main>
   )
 }

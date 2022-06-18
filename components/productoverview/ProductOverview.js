@@ -1,17 +1,21 @@
-import { useState,Fragment, useRef, useEffect } from 'react'
+import { useState,Fragment, useRef, useEffect, useContext } from 'react'
 import { RadioGroup,Dialog,Transition } from '@headlessui/react'
 import { StarIcon, QuestionMarkCircleIcon} from '@heroicons/react/solid'
 import {reviews,policies} from '../../constants/constant'
 import { useRouter } from 'next/router'
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { UpdateCartContext } from '../../stores/cartUpdateContext'
 import {addToCart} from '../../utils/addToCart'
-
+import {viewCart} from '../../utils/getCart'
+import Link from 'next/link'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+
 export default function ProductOverview({images, title, description, price,variants}) {
+  const {userCart, setUserCart, setOpenCart} = useContext(UpdateCartContext)
   const productVariants = {
     connectorType:[
       { name: 'iOS', description: variants[0]?.node?.title, variantId: variants[0]?.node?.id},
@@ -62,10 +66,13 @@ export default function ProductOverview({images, title, description, price,varia
     // TODO prevent default, find the index of selected cable and add to shopify storefront cart
     e.preventDefault()
     const indexOfVariant = productVariants.connectorType.findIndex(cable => cable.name === `${selectedCable}`)
+
     // TODO if variable returns a number other than -1 (Meaning no value was found), query to shopify
     if(indexOfVariant != -1){
-      await addToCart('gid://shopify/Cart/010add7a56f8f774b915f0de83a0bfbe', JSON.parse(selectedQty) , productVariants.connectorType[indexOfVariant].variantId)
-      console.log('success')
+      const {message} = await addToCart('gid://shopify/Cart/010add7a56f8f774b915f0de83a0bfbe', JSON.parse(selectedQty) , productVariants.connectorType[indexOfVariant].variantId)
+      const {cart} = await viewCart(message.cartLinesAdd.cart.id)
+      setUserCart(cart)
+      setOpenCart(true)
     }
   }
 
@@ -123,7 +130,7 @@ export default function ProductOverview({images, title, description, price,varia
                         </p>
                     </div>
 
-                    {/* Reviews
+                    {/* Reviews */}
                     <div className="mt-4">
                         <h2 className="sr-only">Reviews</h2>
                         <div className="flex items-center">
@@ -154,7 +161,7 @@ export default function ProductOverview({images, title, description, price,varia
                                 </Link>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
 
                     {/* Phone select, Add to cart, quantity */}
                     <form className = "mt-4" onSubmit={(e)=>handleSubmit(e)}>

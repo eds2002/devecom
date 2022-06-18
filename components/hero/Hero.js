@@ -28,7 +28,7 @@ const Hero = () => {
             </div>
             <div className = 'flex items-center justify-center flex-1'>
                 <div className = " w-[50%] md:w-full">
-                    <Image src = {heroImg} priority/>
+                    <Image src = {heroImg} priority alt = "The official Bula Mic logo. A company dedicated to selling quality microphones."/>
                 </div>
             </div>
         </div>

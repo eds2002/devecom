@@ -1,69 +1,53 @@
 import { SearchIcon, ShoppingBagIcon, MenuIcon, XIcon, TrashIcon } from '@heroicons/react/outline'
 import { Menu, Popover, Transition,Dialog, Tab } from '@headlessui/react'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect, useContext, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import empty from '../../assets/notFound.svg'
 import { viewCart } from '../../utils/getCart'
 import { updateCart } from '../../utils/updateCart'
 import { useRouter } from 'next/router'
+import { removeCart } from '../../utils/removeCart'
+import { UpdateCartContext } from '../../stores/cartUpdateContext'
 
-
-export async function getStaticProps(){
-    const cart = 'get'
-    return{
-        props:{
-            cart:cart
-        }
-    }
-}
-
-const products = [
-    {
-      id: 1,
-      name: 'Bula Mic',
-      href: '#',
-      cable: 'Lightning Cable',
-      price:26.99,
-      quantity:10,
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-      imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    },
-]
-
-const subTotal = [{
-    subTotal:23
-}]
 
 const Cart = ({cart}) => {
+    const {userCart, setUserCart, openCart,setOpenCart} = useContext(UpdateCartContext)
     const router = useRouter();
-    const [userCart, setUserCart] = useState([])
-    const [bag, setCurrentBag] = useState()
+    const buttonRef = useRef(null)
+
+
     useEffect(()=>{
-        (async ()=>{
-            // TODO Check if cart exists, if it does not create a cart
-            const cartExists = window.localStorage.getItem('bula-cart')
-            if(!cartExists){
-              // TODO Doesn't exist then create a cart for the user, store cart in localstorage
-              const {data} = await storefront(createCart)
-              const cart = [
-                {id:data.cartCreate.cart.id},
-                {url:data.cartCreate.cart.checkoutUrl}
-              ]
-              window.localStorage.setItem('bula-cart', JSON.stringify(cart))
-            }else{
-              // TODO A cart exists, modify current cart 
-              const cart = JSON.parse(window.localStorage.getItem('bula-cart'))
-              const data = await viewCart(cart[0].id)
-              setUserCart(data?.cart)
-            }
-          })();
-      },[])
+        if(openCart){
+            buttonRef?.current?.click()
+            setOpenCart(!openCart)
+        }
+    },[openCart, setOpenCart])
+
+    // const [userCart, setUserCart] = useState([])
+    // const [bag, setCurrentBag] = useState()
+    // useEffect(()=>{
+    //     (async ()=>{
+    //         // TODO Check if cart exists, if it does not create a cart
+    //         const cartExists = window.localStorage.getItem('bula-cart')
+    //         if(!cartExists){
+    //           // TODO Doesn't exist then create a cart for the user, store cart in localstorage
+    //           const {data} = await storefront(createCart)
+    //           const cart = [
+    //             {id:data.cartCreate.cart.id},
+    //             {url:data.cartCreate.cart.checkoutUrl}
+    //           ]
+    //           window.localStorage.setItem('bula-cart', JSON.stringify(cart))
+    //         }else{
+    //           // TODO A cart exists, modify current cart 
+    //           const cart = JSON.parse(window.localStorage.getItem('bula-cart'))
+    //           const data = await viewCart(cart[0].id)
+    //           setUserCart(data?.cart)
+    //         }
+    //       })();
+    //   },[])
 
       const itemsInCart = userCart.lines?.edges
-      console.log(userCart)
-
-
       const handleCheckout = (checkoutLink) =>{
         //TODO push user to checkout page
         router.push(checkoutLink)
@@ -78,12 +62,18 @@ const Cart = ({cart}) => {
         setUserCart(cart)
       }
 
+      const handleRemoveCart = async (lineId) => {
+          const cartId = JSON.parse(localStorage.getItem('bula-cart'))
+          const {cart} = await removeCart(cartId[0].id, lineId)
+          setUserCart(cart)
+      }
+
   return (
-    <div className = "flex z-[999] lg:relative items-center justify-center">
-        <Popover className="flow-root text-sm lg:ml-8">
-            <Popover.Button className="flex items-center p-2 -m-2 group">
+    <div className = "flex z-[999] sm:relative items-center justify-center ring-0">
+        <Popover className="flow-root text-sm sm:ml-8">
+            <Popover.Button className="flex items-center p-2 -m-2 group" ref = {buttonRef}>
                 {itemsInCart?.length > 0 ? 
-                <div className = "flex items-center justify-center w-6 h-6 text-xs text-white bg-indigo-600 rounded-full">
+                <div className = "flex items-center justify-center w-6 h-6 text-xs text-white bg-indigo-600 rounded-full outline-none">
                     {itemsInCart.length}
                 </div>
                 :
@@ -104,23 +94,23 @@ const Cart = ({cart}) => {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
             >
-                <Popover.Panel className="absolute top-24 lg:top-8 inset-x-0 mt-px pb-6 bg-[#242629] shadow-lg sm:px-2  lg:left-auto lg:right-0 lg:mt-3 lg:-mr-1.5 lg:w-80 lg:rounded-lg">
+                <Popover.Panel className="absolute top-24 sm:top-8 inset-x-0 mt-px pb-6 bg-[#242629] shadow-lg sm:px-2  sm:left-auto sm:right-0 sm:mt-3 sm:-mr-1.5 sm:w-80 sm:rounded-lg">
                     <h2 className="sr-only">Shopping Cart</h2>
 
                     <form className="max-w-2xl px-4 mx-auto divide-y divide-gray-700" onSubmit={(e)=>e.preventDefault()}>
                         {/* TODO Check if cart length is 0 */}
                         {itemsInCart?.length === 0 ? 
                             <div className = "h-full">
-                                <div className = "flex items-center justify-between h-full gap-x-6 lg:flex-col">
+                                <div className = "flex items-center justify-between h-full gap-x-6 sm:flex-col">
                                     <div className = "flex items-center justify-center h-full mt-10">
                                         <div className = "w-[200px] h-[200px]">
-                                            <Image src = {empty}/>
+                                            <Image src = {empty} alt = "It's empty here, let's take you around the shop for a bit."/>
                                         </div>
                                     </div>
                                     <div>
                                         <h1 className= "flex flex-col text-white">
-                                            <span className = "text-xl font-bold text-center lg:text-2xl">It's lonely in here.</span>
-                                            <span className = "mb-2 text-sm text-center text-gray-400">Let's help you shop the greatest and latest.</span>
+                                            <span className = "text-xl font-bold text-center lg:text-2xl">It&apos;s lonely in here.</span>
+                                            <span className = "mb-2 text-sm text-center text-gray-400">Let&apos;s help you shop the greatest and latest.</span>
                                         </h1>
                                         <Link href = "/product/bula-mic">
                                             <button className = "w-full py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg">Go Shopping</button>
@@ -134,9 +124,11 @@ const Cart = ({cart}) => {
                                 {itemsInCart?.map((item,index) => (
                                 <li key={index} className="flex items-center py-6">
                                     <div className = "relative h-full">
-                                        <img
+                                        <Image
                                         src={item.node.merchandise.image.url}
-                                        // alt={product.imageAlt}
+                                        alt={item.node.merchandise.image.altText}
+                                        height = {70}
+                                        width = {70}
                                         className="flex-none w-16 h-16 border border-black rounded-md"
                                         />
                                         <p className = "absolute top-[-5px] right-[-5px] flex items-center justify-center w-5 h-5 text-xs text-white bg-gray-600 rounded-full">{item.node.quantity}</p>
@@ -166,7 +158,7 @@ const Cart = ({cart}) => {
                                                 currency: 'USD',
                                             })}
                                         </h3>
-                                        <TrashIcon className = "w-4 h-4 text-white transition cursor-pointer hover:text-indigo-600"/>
+                                        <TrashIcon className = "w-4 h-4 text-white transition cursor-pointer hover:text-indigo-600" onClick = {()=>handleRemoveCart(item.node.id)}/>
                                     </div>
                                 </li>
                                 ))}

@@ -2,12 +2,22 @@ import React from 'react'
 import { Footer, Navigation,AnimateFeature } from '../components'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Head } from 'next/head'
 
 
 
 const Bulamic = () => {
   return (
     <>
+          <Head>
+            <meta charSet='UTF-8'/>
+            <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'/>
+            <meta httpEquiv='X-UA-Compatible' content='ie=edge'/>
+            <title>Bula Microphone</title>
+            <meta name = "description" contnet = "Bula Microphones are the new top of the line quality phone microphones."/>
+            <meta name = "keywords" content = 'BULA, MICROPHONE, PHONE, WIRELESS, BLUETOOTH'/>
+          {/* Favicon */}
+        </Head>
         <Navigation shopNav = 'true'/>
         <section className = "h-[100vh]  bg-[#0f0e17] pt-[152px] relative flex justify-center items-center">
             <div className = "flex items-center h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

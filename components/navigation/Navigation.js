@@ -1,19 +1,10 @@
 import { SearchIcon, ShoppingBagIcon, MenuIcon, XIcon, TrashIcon } from '@heroicons/react/outline'
 import { Menu, Popover, Transition,Dialog, Tab } from '@headlessui/react'
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect, useContext } from 'react'
 import {Announcement, Cart, Shopnav} from '../'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../../assets/BulaLogoWhite.svg'
-import empty from '../../assets/notFound.svg'
-
-const subTotal = [
-    {
-        subTotal: 944.45,
-        currencyCode:"USD",
-        totalTaxAmount:null,
-    }
-]
 
 const navigation = {
     pages: [
@@ -28,12 +19,7 @@ const navigation = {
     ]
 }
 
-function classNames(...classes) {
-return classes.filter(Boolean).join(' ')
-}
   
-  
-
 const Navigation = ({active, shopNav,test}) => {
   const [open, setOpen] = useState(false)
   const [show, setShow] = useState(true);
@@ -82,7 +68,7 @@ const Navigation = ({active, shopNav,test}) => {
                     <div className="z-50 flex-1 w-full h-full md:flex md:items-center">
                         <div className = "relative flex items-center justify-center w-full h-full select-none md:justify-start">
                             <Link href = "/">
-                                <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer"/>
+                                <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer" alt = "The official Bula Mic logo. A company dedicated to selling quality microphones."/>
                             </Link>
                         </div>
                     </div>
@@ -112,7 +98,7 @@ const Navigation = ({active, shopNav,test}) => {
         }
 
     
-        {/* Mobile menu */}
+    {/* Mobile menu */}
     <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
         <Transition.Child

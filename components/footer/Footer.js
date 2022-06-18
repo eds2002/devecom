@@ -15,7 +15,7 @@ export default function Footer() {
             <div className=" md:flex md:items-center">
               <div className = "relative flex items-center w-full h-full md:justify-start">
                 <Link href = "/">
-                  <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer"/>
+                  <Image src = {logo} width = {100} height = {50} priority className = "cursor-pointer" alt = "The official Bula Mic logo. A company dedicated to selling quality microphones."/>
                 </Link>
               </div>
             </div>

@@ -56,7 +56,7 @@ export default function Home({products}) {
         <Features/>
         <Promo/> 
         <Testimonials/>
-        <Footer/>
+        {/* <Footer/> */}
     </main>
   )
 }

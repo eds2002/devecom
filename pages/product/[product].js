@@ -7,7 +7,6 @@ import { storefront } from '../../utils';
 import { viewCart } from '../../utils/getCart';
 
 const ProductPage = ({product, cartId, checkoutURL}) => {
-  const [cart, setCart] = useState({})
   const [userCart, setUserCart] = useState({})
   // TODO Set information necessary for page to load.
   const variants = product.variants?.edges
@@ -68,7 +67,6 @@ const ProductPage = ({product, cartId, checkoutURL}) => {
   // }, [lastScrollY]);
   return (
     <main className = "relative bg-[#16161a]">
-        <Navigation/>
         <ProductOverview images = {images} title = {title} description = {desc} price = {price} variants = {variants}/>
         <ProductSpecs/>
         <Faq/>
@@ -90,24 +88,12 @@ const ProductPage = ({product, cartId, checkoutURL}) => {
             </motion.div>
           )}
         </AnimatePresence>
-        <Footer/>
     </main>
   )
 }
 
 
-// export async function getStaticProps(){
-//   const {data} = await storefront(productsQuery)
-//   return{
-//     props:{
-//       products:data.products
-//     }
-//   }
-// }
-
-
 const gql = String.raw
-
 export async function getStaticPaths(){
   const {data} = await storefront(gql`
     {

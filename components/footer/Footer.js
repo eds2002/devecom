@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000000]" aria-labelledby="footer-heading">
+    <footer className="bg-[#000000] relative" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

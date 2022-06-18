@@ -8,6 +8,7 @@ export async function storefront(query,variables = {}){
             },
             body: JSON.stringify({query,variables})
         })
+        console.log(JSON.stringify(variables))
         return response.json()
     }catch(e){
         console.log(e)

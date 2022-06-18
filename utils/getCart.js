@@ -22,7 +22,11 @@ query viewCart($cartId: ID!){
           merchandise {
             ... on ProductVariant {
               id
-              image{
+              title
+              priceV2{
+                amount
+              }
+              image {
                 url
               }
             }

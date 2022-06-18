@@ -10,7 +10,7 @@ const Productspecs = () => {
             <h2 className="font-semibold text-[#94a1b2]">The Bula Mic</h2>
             <p className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">The little details matter</p>
             <p className="mt-4 text-[#94a1b2]">
-                Don&apos;t be fooled by the Bula Microphones tiny frame. It is <b className = "text-gray-300">packed</b> with features that make it one of the most <b className = "text-gray-300">powerful</b> microphones on the market.
+                Don&apos;t be fooled by the Bula Microphone&apos;s tiny frame. It is <b className = "text-gray-300">packed</b> with features that make it one of the most <b className = "text-gray-300">powerful</b> microphones on the market.
             </p>
           </div>
 

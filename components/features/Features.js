@@ -9,7 +9,7 @@ const Features = () => {
     <div className = "bg-[#000000] pb-24">
         <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-                <h2 className="py-24 text-5xl font-bold tracking-tight text-white lg:text-6xl">
+                <h2 className="py-24 text-5xl font-bold tracking-tight text-[#FEF7FF] lg:text-6xl">
                     Astonishingly small and powerful
                 </h2>
             </div>

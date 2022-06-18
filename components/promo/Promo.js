@@ -20,7 +20,7 @@ const Promo = () => {
                         <h2 className="max-w-3xl text-4xl font-bold tracking-tight text-white md:text-7xl">
                             Bula Mic
                         </h2>
-                        <p className = "text-xl text-gray-400">
+                        <p className = "text-xl text-gray-200">
                             The last mic you&apos;ll ever need.
                         </p>
                         <div className = "flex flex-col items-center justify-center w-full gap-1 my-3 ">
@@ -30,7 +30,7 @@ const Promo = () => {
                                 </a>
                             </Link>
                             <Link href = "/bula-mic">
-                                <a className = "text-xs text-white transition cursor-pointer hover:text-gray-300">Learn more</a>
+                                <a className = "text-xs text-[#FEF7FF] transition cursor-pointer hover:text-gray-300">Learn more</a>
                             </Link>
                         </div>
                     </div>

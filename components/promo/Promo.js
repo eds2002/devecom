@@ -25,7 +25,7 @@ const Promo = () => {
                         </p>
                         <div className = "flex flex-col items-center justify-center w-full gap-1 my-3 ">
                             <Link href = "/product/bula-mic">
-                                <a className="w-full px-8 py-2 text-xs font-medium text-center text-white bg-indigo-600 rounded-md hover:bg-indigo-700 sm:w-auto active:bg-indigo-600 ">
+                                <a className="w-auto px-8 py-2 text-xs font-medium text-center text-white bg-indigo-600 rounded-md hover:bg-indigo-700 active:bg-indigo-600 ">
                                     Shop Now
                                 </a>
                             </Link>

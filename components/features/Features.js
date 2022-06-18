@@ -47,7 +47,7 @@ const Features = () => {
                         'flex-auto lg:row-start-1 lg:col-span-7 xl:col-span-8'
                     )}
                     >
-                        <div className="overflow-hidden bg-gray-100 rounded-lg aspect-w-5 aspect-h-2">
+                        <div className="overflow-hidden bg-black rounded-lg aspect-w-5 aspect-h-2">
                             <Image src={feature.imageSrc} alt={feature.imageAlt} layout = 'fill'/*width = {100} height = {100} className="object-cover object-center"*/ />
                         </div>
                     </div>

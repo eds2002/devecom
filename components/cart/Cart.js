@@ -128,11 +128,9 @@ const Cart = ({cart}) => {
                                 {itemsInCart?.map((item,index) => (
                                 <li key={index} className="flex items-center py-6">
                                     <div className = "relative h-full">
-                                        <Image
+                                        <img
                                         src={item.node.merchandise.image.url}
                                         alt={item.node.merchandise.image.altText}
-                                        height = {70}
-                                        width = {70}
                                         className="flex-none w-16 h-16 border border-black rounded-md"
                                         />
                                         <p className = "absolute top-[-5px] right-[-5px] flex items-center justify-center w-5 h-5 text-xs text-white bg-gray-600 rounded-full">{item.node.quantity}</p>

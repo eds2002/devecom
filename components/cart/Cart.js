@@ -103,9 +103,9 @@ const Cart = ({cart}) => {
 
                     <form className="max-w-2xl px-4 mx-auto divide-y divide-gray-700" onSubmit={(e)=>e.preventDefault()}>
                         {/* TODO Check if cart length is 0 */}
-                        {itemsInCart?.length === 0 ? 
+                        {itemsInCart?.length === 0 || !itemsInCart ? 
                             <div className = "h-full">
-                                <div className = "flex items-center justify-between h-full gap-x-6 sm:flex-col">
+                                <div className = "flex flex-col items-center justify-between h-full gap-x-6">
                                     <div className = "flex items-center justify-center h-full mt-10">
                                         <div className = "w-[200px] h-[200px]">
                                             <Image src = {empty} alt = "It's empty here, let's take you around the shop for a bit."/>

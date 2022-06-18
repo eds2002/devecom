@@ -1,5 +1,6 @@
 import {createContext, useState,useEffect} from 'react'
 import { viewCart } from '../utils/getCart'
+import { storefront } from '../utils'
 
 export const UpdateCartContext = createContext({
     status: null,
@@ -38,3 +39,16 @@ export const UpdateCartProvider = ({ children }) => {
         </UpdateCartContext.Provider>
     )
 }
+
+const gql = String.raw
+
+const createCart = gql`
+mutation CreateCart {
+	cartCreate{
+    cart{
+      checkoutUrl
+      id
+		}
+	}
+}
+`

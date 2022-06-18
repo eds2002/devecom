@@ -108,7 +108,7 @@ const Cart = ({cart}) => {
                                 <div className = "flex flex-col items-center justify-between h-full gap-x-6">
                                     <div className = "flex items-center justify-center h-full mt-10">
                                         <div className = "w-[200px] h-[200px]">
-                                            <img src = {empty} alt = "It's empty here, let's take you around the shop for a bit."/>
+                                            <Image className = "w-full h-full" src = {empty} alt = "It's empty here, let's take you around the shop for a bit." priority/>
                                         </div>
                                     </div>
                                     <div>

@@ -198,7 +198,7 @@ const Cart = ({cart}) => {
                             </ul>
                             <button
                                 type="submit"
-                                className="w-full px-4 py-2 text-sm text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none ring-offset-2 focus:ring-indigo-600 focus:ring-2"
+                                className="w-full py-2 text-xs font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none ring-offset-2 focus:ring-indigo-600 focus:ring-2"
                                 onClick = {()=>handleCheckout(userCart?.checkoutUrl)}
                             >
                                 Checkout

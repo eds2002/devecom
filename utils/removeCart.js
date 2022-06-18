@@ -3,8 +3,12 @@ import { viewCart } from "./getCart"
 
 
 export async function removeCart(cartId, lineId){
+  try{
     const {data} = await storefront(removeCartQuery, {cartId:cartId, lineIds: [lineId]})
-    return viewCart(data.cartLinesRemove.cart.id)
+    return {status:200, message: await viewCart(data.cartLinesRemove.cart.id)}
+  }catch(error){
+    return {status:400, message: error}
+  }
 }
 
 

@@ -5,7 +5,7 @@ export async function addToCart(cartId,quantity,variantId){
     const {data} = await storefront(addToCartQuery, {variantId: variantId, cartId: cartId, quantity: quantity})
     return {status:200, message:data}
   }catch(e){
-    return {status:400, message:`Response: ${e}`}
+    return {status:400, message:e}
   }
 }
 

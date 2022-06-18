@@ -69,10 +69,15 @@ export default function ProductOverview({images, title, description, price,varia
 
     // TODO if variable returns a number other than -1 (Meaning no value was found), query to shopify
     if(indexOfVariant != -1){
-      const {message} = await addToCart('gid://shopify/Cart/010add7a56f8f774b915f0de83a0bfbe', JSON.parse(selectedQty) , productVariants.connectorType[indexOfVariant].variantId)
-      const {cart} = await viewCart(message.cartLinesAdd.cart.id)
-      setUserCart(cart)
-      setOpenCart(true)
+      const cartId = JSON.parse(window.localStorage.getItem('bula-cart'))
+      const {status,message} = await addToCart(cartId[0].id, JSON.parse(selectedQty) , productVariants.connectorType[indexOfVariant].variantId)
+      if(status === 200){
+        const {cart} = await viewCart(message.cartLinesAdd.cart.id)
+        setUserCart(cart)
+        setOpenCart(true)
+      }else{
+        alert("error in loading into cart")
+      }
     }
   }
 

@@ -64,8 +64,12 @@ const Cart = ({cart}) => {
 
       const handleRemoveCart = async (lineId) => {
           const cartId = JSON.parse(localStorage.getItem('bula-cart'))
-          const {cart} = await removeCart(cartId[0].id, lineId)
-          setUserCart(cart)
+          const {status,message} = await removeCart(cartId[0].id, lineId)
+          if(status === 200){
+              setUserCart(message.cart)
+          }else{
+              alert("error in removing line")
+          }
       }
 
   return (

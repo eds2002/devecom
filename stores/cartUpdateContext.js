@@ -26,7 +26,8 @@ export const UpdateCartProvider = ({ children }) => {
                 // TODO A cart exists, modify current cart 
                 const cart = JSON.parse(window.localStorage.getItem('bula-cart'))
                 const data = await viewCart(cart[0].id)
-                setUserCart(data?.cart)
+                console.log("tes",data)
+                setUserCart(data.cart)
             }
         })();
     },[])

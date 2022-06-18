@@ -2,7 +2,7 @@ import React from 'react'
 import { Footer, Navigation,AnimateFeature } from '../components'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Head } from 'next/head'
+import Head from 'next/head'
 
 
 

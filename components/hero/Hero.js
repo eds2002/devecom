@@ -5,7 +5,7 @@ import heroImg from '../../assets/heroImage.webp'
 import heroImg2 from '../../assets/featureimage2.webp'
 const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center w-[100vw] pt-[104px] h-[100vh]">
+    <div className="relative flex items-center justify-center w-full pt-[104px] h-[100vh]">
         <div className = "relative flex flex-col w-full h-full max-w-2xl mx-auto md:flex-row lg:max-w-7xl lg:px-8">    
             <div className = "z-10 flex flex-col items-center justify-center flex-1 w-full pt-10 md:items-start">
                 <h1 className = "max-w-xl text-6xl font-medium text-white">Bula Mic</h1>

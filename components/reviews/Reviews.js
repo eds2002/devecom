@@ -8,7 +8,7 @@ const Reviews = () => {
   return (
     <section aria-labelledby="reviews-heading" className="relative px-4 mx-auto mt-16 sm:mt-24 max-w-7xl sm:px-6 lg:px-8 mb-36" id = "reviews">
         <div className = "flex flex-col items-center justify-between sm:items-start">
-            <h2 className="text-3xl font-bold text-center text-white sm:text-4xl">Recent Reviews</h2>
+            <h2 className="text-3xl font-bold text-left text-white sm:text-4xl">Recent Reviews</h2>
         </div> 
 
         <div className="pb-10 mt-6 space-y-10 border-b divide-y border-gray-400/20 divide-gray-400/20">

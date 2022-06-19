@@ -10,7 +10,7 @@ const Faq = () => {
     <div className="px-4 py-12 mx-auto max-w-7xl sm:py-16 sm:px-6 lg:px-8">
         <div className="mx-auto">
             <div className = "flex flex-col items-center justify-between sm:items-start">
-                <h2 className="flex flex-col items-start justify-center w-full text-3xl font-bold text-center text-white sm:text-4xl">
+                <h2 className="flex flex-col items-start justify-center w-full text-3xl font-bold text-left text-white sm:text-4xl">
                     Frequently asked questions
                     <span className = "mt-2 text-xs font-normal text-indigo-600 transition hover:text-indigo-400">
                         <Link href = "/bula/support">

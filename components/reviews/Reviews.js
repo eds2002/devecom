@@ -7,11 +7,11 @@ function classNames(...classes) {
 const Reviews = () => {
   return (
     <section aria-labelledby="reviews-heading" className="relative px-4 mx-auto mt-16 sm:mt-24 max-w-7xl sm:px-6 lg:px-8 mb-36" id = "reviews">
-        <h2 id="reviews-heading" className="text-lg font-medium text-white">
-        Recent reviews
-        </h2>
+        <div className = "flex flex-col items-center justify-between sm:items-start">
+            <h2 className="text-3xl font-bold text-center text-white sm:text-4xl">Recent Reviews</h2>
+        </div> 
 
-        <div className="pb-10 mt-6 space-y-10 border-b border-gray-600 divide-y divide-gray-600">
+        <div className="pb-10 mt-6 space-y-10 border-b divide-y border-gray-400/20 divide-gray-400/20">
         {reviews.featured.map((review) => (
             <div key={review.id} className="pt-10 lg:grid lg:grid-cols-12 lg:gap-x-8">
             <div className="lg:col-start-5 lg:col-span-8 xl:col-start-4 xl:col-span-9 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:items-start">

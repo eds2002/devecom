@@ -19,15 +19,15 @@ const Bulamic = () => {
           {/* Favicon */}
         </Head>
         <Navigation shopNav = 'true'/>
-        <section className = "h-[100vh]  bg-[#0f0e17] pt-[152px] relative flex justify-center items-center">
+        <section className = "h-[100vh] pt-[152px] relative flex justify-center items-center">
             <div className = "flex items-center h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <h1 className="flex-1 py-2 text-5xl font-extrabold text-transparent sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r bg-clip-text from-purple-400 to-red-600">
-                    The only mic you&apos;ll ever need
+                <h1 className="flex-1 py-2 text-5xl font-extrabold text-center text-white sm:text-6xl md:text-7xl lg:text-8xl">
+                    The only mic you&apos;ll ever need is now here.
                 </h1>
             </div>
         </section>
         
-        <section className = "relative flex items-center justify-center text-white bg-[#16161a]">
+        <section className = "relative flex items-center justify-center text-white bg-[#0b0b0b]">
             <div className = "h-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 py-[100px] w-full">
                 <div className = "w-full">
                     
@@ -59,7 +59,6 @@ const Bulamic = () => {
 
             </div> */}
         </section>
-        <Footer/>
     </>
   )
 }

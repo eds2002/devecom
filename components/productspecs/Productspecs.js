@@ -3,7 +3,7 @@ import Link from "next/link"
 import { features } from "./productspecs.data"
 const Productspecs = () => {
   return (
-    <div className="bg-[#16161a]">
+    <div className="bg-black">
       <div className="py-24 mx-auto max-w-7xl sm:py-32 sm:px-2 lg:px-4">
         <div className="max-w-2xl px-4 mx-auto lg:max-w-none">
           <div className="max-w-3xl">
@@ -14,7 +14,7 @@ const Productspecs = () => {
             </p>
           </div>
 
-          <div className="pt-10 mt-10 space-y-16 border-t border-gray-600 sm:pt-16 sm:mt-16">
+          <div className="pt-10 mt-10 space-y-16 border-t border-gray-500/20 sm:pt-16 sm:mt-16">
             {features.map((feature) => (
               <div
                 key={feature.name}

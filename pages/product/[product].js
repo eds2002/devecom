@@ -38,7 +38,7 @@ const ProductPage = ({product}) => {
     }
   }, [lastScrollY]);
   return (
-    <main className = "relative bg-[#16161a]">
+    <main className = "relative">
         <ProductOverview images = {images} title = {title} description = {desc} price = {price} variants = {variants}/>
         <ProductSpecs/>
         <Faq/>
@@ -60,7 +60,6 @@ const ProductPage = ({product}) => {
             </motion.div>
           )}
         </AnimatePresence>
-        <Footer/>
     </main>
   )
 }

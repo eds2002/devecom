@@ -82,7 +82,7 @@ export default function ProductOverview({images, title, description, price,varia
   }
 
   return (
-    <div className="px-4 bg-[#16161a] pt-[154px] relative">
+    <div className="px-4 pt-[154px] pb-16 relative">
         {/* Product */}
         <section className="relative flex items-center justify-between h-full mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className = "grid w-full grid-cols-1 overflow-hidden md:grid-cols-3 lg:grid-cols-4 gap-x-5">
@@ -213,7 +213,7 @@ export default function ProductOverview({images, title, description, price,varia
                         </div>
                         <div className = "flex flex-col mt-6 gap-y-3">
                             <div className = "flex gap-x-3">
-                              <select name = "quantity" className = "font-light bg-[#242629] text-white rounded-md border-none text-xs" onChange={(e)=>setSelectedQty(e.target.value)}>
+                              <select name = "quantity" className = "font-light bg-[#171717] text-white rounded-md border-none text-xs" onChange={(e)=>setSelectedQty(e.target.value)}>
                                 <option value = '1'>Qty: 1</option>
                                 <option value = '2'>Qty: 2</option>
                                 <option value = '3'>Qty: 3</option>
@@ -234,7 +234,7 @@ export default function ProductOverview({images, title, description, price,varia
                     </form>
 
                     {/* Description */}
-                    <div className="mt-4 text-[#94a1b2] bg-[#242629] p-6 rounded-xl">
+                    <div className="mt-4 text-[#94a1b2] bg-[#171717] p-6 rounded-xl">
                         <h2 className = "sr-only" id = 'product-description'>Product Description</h2>
                         {/* Description */}
                         <h2 className="mb-2 text-xs font-semibold text-white ">The highest quality phone microphone</h2>

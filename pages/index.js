@@ -40,7 +40,7 @@ const footerNavigation = {
 }
 export default function Home({products}) {
   return (
-    <main className = "bg-[#16161a] h-[100vh]">
+    <main className = "bg-[#16161a] h-full">
         <Head>
           <meta charSet='UTF-8'/>
           <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'/>
@@ -56,7 +56,6 @@ export default function Home({products}) {
         <Features/>
         <Promo/> 
         <Testimonials/>
-        <Footer/>
     </main>
   )
 }

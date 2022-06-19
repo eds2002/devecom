@@ -8,11 +8,10 @@ const Faq = () => {
   return (
     <div className="px-4 py-12 mx-auto max-w-7xl sm:py-16 sm:px-6 lg:px-8">
         <div className="mx-auto">
-            <div className = "flex items-center justify-between">
+            <div className = "flex flex-col items-center justify-between sm:items-start">
                 <h2 className="text-3xl font-bold text-center text-white sm:text-4xl">Frequently asked questions</h2>
-                <p></p>
-            </div>           
-            <dl className="mt-6 space-y-6 divide-y divide-gray-700">
+            </div>          
+            <dl className="mt-6 space-y-6 divide-y divide-gray-500/40">
                 {faqs.map((faq) => (
                 <Disclosure as="div" key={faq.question} className="pt-6">
                     {({ open }) => (

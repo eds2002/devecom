@@ -2,12 +2,13 @@ import { ChevronRightIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 import Image from "next/image"
 import heroImg from '../../assets/heroImage.webp'
+import heroImg2 from '../../assets/featureimage2.webp'
 const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center w-full pt-[104px] h-[90vh] md:h-[100vh] max-w-2xl mx-auto lg:max-w-7xl lg:px-8">
-        <div className = "relative flex flex-col w-full h-full max-w-4xl md:flex-row ">    
-            <div className = "flex flex-col items-center justify-center flex-1 w-full pt-10 md:items-start">
-                <h1 className = "max-w-xl text-4xl font-medium text-white">Bula Mic</h1>
+    <div className="relative flex items-center justify-center w-[100vw] pt-[104px] h-[100vh]">
+        <div className = "relative flex flex-col w-full h-full max-w-2xl mx-auto md:flex-row lg:max-w-7xl lg:px-8">    
+            <div className = "z-10 flex flex-col items-center justify-center flex-1 w-full pt-10 md:items-start">
+                <h1 className = "max-w-xl text-6xl font-medium text-white">Bula Mic</h1>
                 <p className="max-w-xl my-2 text-lg font-normal tracking-tight text-gray-400 sm:text-xl md:text-2xl">
                     The last mic you&apos;ll ever need.
                 </p>
@@ -26,11 +27,16 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className = 'flex items-center justify-center flex-1'>
-                <div className = " w-[60%] sm:w-[50%] md:w-full">
-                    <Image src = {heroImg} priority alt = "The official Bula Mic logo. A company dedicated to selling quality microphones."/>
-                </div>
-            </div>
+        </div>
+        <div className="absolute inset-0">
+            <Image
+                src={heroImg2}
+                alt="An image of image"
+                layout = 'fill'
+                className="object-cover object-center w-full h-full"
+                priority
+            />
+            <div className = "absolute inset-0 w-full h-full"></div>
         </div>
     </div>
   )

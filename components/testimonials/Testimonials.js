@@ -20,7 +20,7 @@ const Testimonials = () => {
         swipeToSlide: true,
       };
   return (
-      <div className = "w-full overflow-hidden bg-[#16161a] py-24">
+      <div className = "w-full overflow-hidden bg-[#0b0b0b] py-24">
         <div className="relative max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className = "flex flex-col items-center justify-center">
                 <h1 className = "text-3xl font-bold text-center text-white sm:text-4xl">

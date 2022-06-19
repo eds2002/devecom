@@ -72,11 +72,19 @@ export const reviews = {
         title: "Perfect for on the go meetings",
         rating: 5,
         content: `
-        <p>I do a lot of virtual meetings for work and I started to use my phone to dial into those meetings now. But one downside is my iPhone would pick up wind noises and car noises. This adapter helped solve that. I was able to clip it on my shirt while I drive or out at the park. It’s nice to be able to get some fresh air during those boring meetings. I tried it with my wife and she said my voice came through clear and didn't get much background/wind noises. So I'm happy with these.</p>
+        <p>I do a lot of virtual meetings for work and I started to use my phone to dial into those meetings now. But one downside is my iPhone would pick up wind noises and car noises. This adapter helped solve that. I was able to clip it on my shirt while I drive or out at the park. It's nice to be able to get some fresh air during those boring meetings. I tried it with my wife and she said my voice came through clear and didn't get much background/wind noises. So I'm happy with these.</p>
         `,
         author: 'WillTheDude',
         date: 'May 30, 2022',
       },
+      {
+        id:8,
+        title:"Dirrections for different model includes",
+        rating:2,
+        content: `
+        <p>The instructions that came with this were for a different model because they didn't describe this product. We were able to connect the mic and it worked with my husband's iPhone, but did not work with mine. I am not sure why. I am updating my phone. If it does not work after that, I will have to return it.</p>
+        `
+      }
     ],
 } 
 
@@ -117,14 +125,14 @@ export const features = [
   {
     name: 'Get rid of the bulk',
     description:
-      '<p>No longer carry excessive gears ever again. We offer the best <b>all-in-one</b> solution for <b>shooting high quality audio</b> at a low price!</p>',
+      '<p>No longer carry excessive gears ever again. We offer the best <b>all-in-one</b> solution for <b>shooting high quality audio</b>.</p>',
     imageSrc: featureOne,
     imageAlt: 'White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull.',
   },
   {
     name: 'Lightweight and Portable',
     description:
-      '<p>Never carry heaving equipment again! Our microphones are <b>quick and easy</b> to setup with <b>bluetooth connection</b>.</p>',
+      '<p>Never carry heaving equipment again. Our microphones are <b>quick and easy</b> to setup with <b>bluetooth connection</b>.</p>',
     imageSrc: featureTwo,
     imageAlt: 'Detail of zipper pull with tan leather and silver rivet.',
   },

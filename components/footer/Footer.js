@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000000] relative" aria-labelledby="footer-heading">
+    <footer className="bg-[#000000] relative " aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -70,7 +70,7 @@ export default function Footer() {
               </div>
           </div>
         </div>
-        <div className="flex items-center justify-center pt-8 mt-12 border-t border-gray-600">
+        <div className="flex items-center justify-center pt-8 mt-12 border-t border-gray-400/20">
           <p className="text-base text-gray-400 xl:text-center">&copy; 2020 Bula, Inc. All rights reserved.</p>
         </div>
       </div>

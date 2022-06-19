@@ -34,7 +34,7 @@ const Features = () => {
                                     Shop now
                                 </a>
                             </Link>
-                            <Link href = "/bula-mic" >
+                            <Link href = "/bulamic" >
                                 <a className = "text-xs text-white transition cursor-pointer hover:text-gray-500">
                                     Learn more
                                 </a>

@@ -27,7 +27,7 @@ const Promo = () => {
                                     Shop Now
                                 </a>
                             </Link>
-                            <Link href = "/bula-mic">
+                            <Link href = "/bulamic">
                                 <a className = "text-xs text-[#FEF7FF] transition cursor-pointer hover:text-gray-300">Learn more</a>
                             </Link>
                         </div>

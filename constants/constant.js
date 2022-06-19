@@ -83,7 +83,9 @@ export const reviews = {
         rating:2,
         content: `
         <p>The instructions that came with this were for a different model because they didn't describe this product. We were able to connect the mic and it worked with my husband's iPhone, but did not work with mine. I am not sure why. I am updating my phone. If it does not work after that, I will have to return it.</p>
-        `
+        `,
+        author: 'Sarah',
+        date: 'February, 2021',
       }
     ],
 } 

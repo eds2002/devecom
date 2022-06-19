@@ -14,8 +14,8 @@ const navigation = {
     ],
     resources: [
         {name: 'FAQs', href: '/bula/support'},
-        {name: 'Returns & Exchanges', href: '/support/returns-&-exchanges'},
-        {name: 'support@domain.com', href: '/support/email'},
+        {name: 'Returns & Exchanges', href: '/bula/support'},
+        {name: 'help@bula.com', href: '/bula/support'},
     ]
 }
 

@@ -137,7 +137,7 @@ const Cart = ({cart}) => {
                                     </div>
                                     <div className="flex flex-col h-16 ml-4">
                                         <h3 className="font-medium text-white">
-                                            <Link href = "product.href">
+                                            <Link href = "/product/bula-mic">
                                                 <a>Bula Mic</a>
                                             </Link>
                                         </h3>

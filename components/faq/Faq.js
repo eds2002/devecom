@@ -1,5 +1,6 @@
 import { RadioGroup, Disclosure } from '@headlessui/react'
 import { CurrencyDollarIcon, GlobeIcon, BadgeCheckIcon, SwitchHorizontalIcon, ChevronDownIcon } from '@heroicons/react/outline'
+import Link from 'next/link'
 import { faqs } from './faq.data'
 const Faq = () => {
     function classNames(...classes) {
@@ -9,7 +10,14 @@ const Faq = () => {
     <div className="px-4 py-12 mx-auto max-w-7xl sm:py-16 sm:px-6 lg:px-8">
         <div className="mx-auto">
             <div className = "flex flex-col items-center justify-between sm:items-start">
-                <h2 className="text-3xl font-bold text-center text-white sm:text-4xl">Frequently asked questions</h2>
+                <h2 className="flex flex-col items-start justify-center w-full text-3xl font-bold text-center text-white sm:text-4xl">
+                    Frequently asked questions
+                    <span className = "mt-2 text-xs font-normal text-indigo-600 transition hover:text-indigo-400">
+                        <Link href = "/bula/support">
+                            <a>Read all FAQ&apos;s</a>
+                        </Link>
+                    </span>
+                </h2>
             </div>          
             <dl className="mt-6 space-y-6 divide-y divide-gray-500/40">
                 {faqs.map((faq) => (

@@ -9,11 +9,11 @@ import logo from '../../assets/BulaLogoWhite.svg'
 const navigation = {
     pages: [
       { name: 'Bula Mic', href: '/bulamic' },
-      { name: 'Our Story', href: '/story' },
-      { name: 'Support', href: '/support' },
+    //   { name: 'Our Story', href: '/story' },
+      { name: 'Support', href: '/bula/support' },
     ],
     resources: [
-        {name: 'FAQs', href: '/faq'},
+        {name: 'FAQs', href: '/bula/support'},
         {name: 'Returns & Exchanges', href: '/support/returns-&-exchanges'},
         {name: 'support@domain.com', href: '/support/email'},
     ]

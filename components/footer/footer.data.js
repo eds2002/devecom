@@ -9,8 +9,8 @@ export const navigation = {
       { name: 'Our Story', href: '#' },
     ],
     legal: [
-      { name: 'Terms & Conditions', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
+      { name: 'Terms of Service', href: '/bula/terms-of-service' },
+      { name: 'Privacy Policy', href: '/bula/privacy-policy' },
     ],
     social: [
       {

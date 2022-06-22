@@ -45,9 +45,9 @@ export default function Home({products}) {
           <meta charSet='UTF-8'/>
           <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'/>
           <meta httpEquiv='X-UA-Compatible' content='ie=edge'/>
-          <title>Bula Microphone</title>
-          <meta name = "description" contnet = "Bula Microphones are the new top of the line quality phone microphones."/>
-          <meta name = "keywords" content = 'BULA, MICROPHONE, PHONE, WIRELESS, BLUETOOTH'/>
+          <title>Bula</title>
+          <meta name = "description" content = "Explore The Best Microphone For Your Phone Now."/>
+          <meta name = "keywords" content = 'BULA, MICROPHONE, PHONE, WIRELESS, BLUETOOTH, MIC'/>
           {/* Favicon */}
         </Head>
         <Navigation active = "home"/>

@@ -51,6 +51,15 @@ const ProductPage = ({product}) => {
   }, [lastScrollY]);
   return (
     <main className = "relative">
+      <Head>
+        <meta charSet='UTF-8'/>
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'/>
+        <meta httpEquiv='X-UA-Compatible' content='ie=edge'/>
+        <title>Buy The Bula Mic - Bula</title>
+        <meta name = "description" content = "Shop The New Bula Mic. The Best Wireless Phone Microphone On The Market Right Now."/>
+        <meta name = "keywords" content = 'BULA, MICROPHONE, PHONE, WIRELESS, BLUETOOTH, MIC'/>
+        {/* Favicon */}
+      </Head>
         <ProductOverview images = {images} title = {title} description = {desc} price = {price} variants = {variants}/>
         <ProductSpecs/>
         <Faq/>

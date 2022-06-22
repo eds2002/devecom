@@ -4,13 +4,12 @@ export async function storefront(query,variables = {}){
             method: "POST",
             headers:{
                 'Content-Type': "application/json",
-                'X-Shopify-Storefront-Access-Token': NEXT_PUBLIC_ACCESS_TOKEN
+                'X-Shopify-Storefront-Access-Token': process.env.NEXT_PUBLIC_ACCESS_TOKEN
             },
             body: JSON.stringify({query,variables})
         })
-        console.log(JSON.stringify(variables))
         return response.json()
     }catch(e){
-        console.log(e)
+        return ('Error in response')
     }
 } 

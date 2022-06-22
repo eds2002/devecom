@@ -1,9 +1,12 @@
 import {Faq, Footer, Navigation,ProductOverview, ProductSpecs, Reviews} from '../../components'
 import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowUpIcon } from '@heroicons/react/outline';
+import { RadioGroup } from '@headlessui/react';
 import Link from 'next/link';
 import { storefront } from '../../utils';
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 const ProductPage = ({product}) => {
   // TODO Set information necessary for page to load.
@@ -15,6 +18,15 @@ const ProductPage = ({product}) => {
 
   const [lastScrollY, setLastScrollY] = useState(0);
   const [popup, setPopup] = useState(false)
+  const [cartPopup, setCartPopup] = useState(true)
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
   
   const controlPopup = () => {
     if (typeof window !== 'undefined') { 
@@ -51,12 +63,9 @@ const ProductPage = ({product}) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <Link href = "#">
-                <a className = "absolute flex items-center justify-center w-32 mb-6 mr-6 text-white bg-indigo-600 shadow-xl h-14 rounded-xl">
-                    <span className = "text-sm font-medium">Back to top</span>
-                    <ArrowUpIcon className = "w-8 h-8 p-2 text-white "/>
-                </a>
-              </Link>
+              <div className = "absolute flex items-center justify-center w-32 py-2 mb-6 mr-6 text-white bg-indigo-600 rounded-full shadow-xl" onClick = {()=>setCartPopup(!cartPopup)}>
+                  <span className = "text-sm font-medium cursor-pointer" onClick = {()=>scrollToTop()}>Back to top</span>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

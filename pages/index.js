@@ -61,10 +61,18 @@ export default function Home({products}) {
 }
 
 export async function getStaticProps(){
-  const {data} = await storefront(productsQuery)
-  return{
-    props:{
-      products:data.products
+  try{
+    const {data} = await storefront(productsQuery)
+    return{
+      props:{
+        products:data.products
+      }
+    }
+  }catch(error){
+    return{
+      props:{
+        error:'Error in loading in data.'
+      }
     }
   }
 }

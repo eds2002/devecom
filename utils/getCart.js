@@ -1,7 +1,11 @@
 import {storefront} from './index'
 export async function viewCart(cartId){
-    const {data} = await storefront(viewCartQuery, {cartId:cartId})
-    return data
+    try{
+      const {data} = await storefront(viewCartQuery, {cartId:cartId})
+      return data
+    }catch(e){
+      return ('Error in loading props',e)
+    }
 }
 
 

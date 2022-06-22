@@ -24,40 +24,20 @@ const Testimonials = () => {
         <div className="relative max-w-2xl px-4 mx-auto sm:px-6 lg:max-w-7xl lg:px-8">
             <div className = "flex flex-col items-center justify-center">
                 <h1 className = "text-3xl font-bold text-center text-white sm:text-4xl">
-                    Take a look at what our customers have to say
+                    We're the best - for good reasons
                 </h1>
             </div>
-
-            <Slider {...settings}>
+            <div className = "flex flex-col w-full md:flex-row ">
                 {UserTestimonials.map((review,id)=>(
-                    <div className = "flex w-full " key = {id}>
-                        <div className = "flex flex-col items-center justify-center w-full max-w-2xl px-4 mx-auto my-10 sm:px-6 lg:max-w-7xl lg:px-8" key = {id}>
-                            <span className="inline-block w-20 h-20 overflow-hidden bg-gray-100 rounded-full">
-                                <svg className="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                            </span>
-                            <h1 className = "mt-5 text-xl font-bold text-white">{review.name}</h1>
-                            <p className = "text-base font-medium text-[#94a1b2]">{review.location}</p>
-                            <div className = "flex flex-col items-center justify-center mt-10">
-                                <div className="flex items-center ml-1">
-                                    {[0, 1, 2, 3, 4].map((index) => (
-                                        <StarIcon
-                                        key={index}
-                                        className={classNames(
-                                            review.rating > index ? 'text-indigo-600' : 'text-gray-400',
-                                            'h-4 w-4 flex-shrink-0'
-                                        )}
-                                        aria-hidden="true"
-                                        />
-                                    ))}
-                                </div>
-                                <p className = "max-w-4xl mt-5 text-md  text-center text-[#94a1b2] md:text-xl">{review.review}</p>
-                            </div>
+                    <div className = "flex flex-col items-center justify-center w-full px-4 mx-auto my-10 sm:px-6 lg:max-w-7xl lg:px-8" key = {id}>
+                        <div className = "flex flex-col items-center justify-center mt-10">
+                            <p className = "mt-5 text-center text-gray-200 text-md">"{review.review}"</p>
                         </div>
+                        <h1 className = "mt-5 text-sm italic font-medium text-gray-500">- {review.name}</h1>
+                        <p className = "text-xs text-gray-500">{review.location}</p>
                     </div>
                 ))}
-            </Slider>
+            </div>
         </div>
       </div>
     

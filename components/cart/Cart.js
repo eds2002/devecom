@@ -47,7 +47,7 @@ const Cart = ({cart}) => {
     //       })();
     //   },[])
 
-      const itemsInCart = userCart.lines?.edges
+      const itemsInCart = userCart?.lines?.edges
       const handleCheckout = (checkoutLink) =>{
         //TODO push user to checkout page
         router.push(checkoutLink)

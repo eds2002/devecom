@@ -211,6 +211,8 @@ export default function ProductOverview({images, title, description, price,varia
                               </RadioGroup>
                             </div>
                         </div>
+
+                        {/* QTY picker */}
                         <div className = "flex flex-col mt-6 gap-y-3">
                             <div className = "flex gap-x-3">
                               <select name = "quantity" className = "font-light bg-[#171717] text-white rounded-md border-none text-xs" onChange={(e)=>setSelectedQty(e.target.value)}>

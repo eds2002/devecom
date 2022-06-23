@@ -1,4 +1,5 @@
 import { Docs } from "../../constants/constant"
+import Head from "next/head"
 
 
 

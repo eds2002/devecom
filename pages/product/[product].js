@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from "framer-motion"
 import { RadioGroup } from '@headlessui/react';
 import Link from 'next/link';
+import Head from 'next/head';
 import { storefront } from '../../utils';
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

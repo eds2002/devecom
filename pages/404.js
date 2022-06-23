@@ -1,6 +1,7 @@
 import errorImg from '../assets/404image.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function error(){
   return (

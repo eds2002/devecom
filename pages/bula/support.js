@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react"
 import { CurrencyDollarIcon, GlobeIcon, BadgeCheckIcon, SwitchHorizontalIcon, ChevronDownIcon } from '@heroicons/react/outline'
 import {Footer} from '../../components'
+import Head from "next/head"
 
 const FAQS = {
     shipping: [

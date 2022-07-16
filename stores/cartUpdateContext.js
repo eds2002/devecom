@@ -26,7 +26,6 @@ export const UpdateCartProvider = ({ children }) => {
                 // TODO, get cart information
                 const cart = JSON.parse(window.localStorage.getItem('bula-cart'))
                 const data = await viewCart(cart[0].id)
-                console.log(data)
                 // TODO, if data returns a falsey statement (Issue with shopify? Cart id expires after 3-4 days instead of 10) 
                 if(!data.cart){
                     // TODO, clear cart data from localstorage and create a new cart session

@@ -1,6 +1,9 @@
 import { storefront } from "."
 export async function createShopifyCart(){
+  // TOOD, query to storefront api
   const {data} = await storefront(createCart)
+
+  // TODO, store data from storefront to localstorage
   const cart = [
   {id:data.cartCreate.cart.id},
   {url:data.cartCreate.cart.checkoutUrl},

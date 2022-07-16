@@ -16,13 +16,18 @@ function classNames(...classes) {
 
 
 export default function ProductOverview({images, title, description, price,variants}) {
+  // TODO, load use states from useContext
   const {userCart, setUserCart, setOpenCart} = useContext(UpdateCartContext)
+
+  // TODO, these are variants we absolutely know are going to be needed
   const productVariants = {
     connectorType:[
       { name: 'iOS', description: variants[0]?.node?.title, variantId: variants[0]?.node?.id || "iOS variant not found."},
       { name: 'Android', description: variants[1]?.node?.title, variantId:variants[1]?.node?.id || 'Android varaitn not found.'},
     ],
   }
+
+  
   const [selectedQty, setSelectedQty] = useState(1)
   const [selectedCable, setSelectedCable] = useState(null) 
   const router = useRouter()

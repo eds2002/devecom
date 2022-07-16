@@ -9,6 +9,7 @@ import { UpdateCartContext } from '../../stores/cartUpdateContext'
 import {addToCart} from '../../utils/addToCart'
 import {viewCart} from '../../utils/getCart'
 import Link from 'next/link'
+import { createShopifyCart } from '../../utils/createCart'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -18,8 +19,8 @@ export default function ProductOverview({images, title, description, price,varia
   const {userCart, setUserCart, setOpenCart} = useContext(UpdateCartContext)
   const productVariants = {
     connectorType:[
-      { name: 'iOS', description: variants[0]?.node?.title, variantId: variants[0]?.node?.id},
-      { name: 'Android', description: variants[1]?.node?.title, variantId:variants[1]?.node?.id},
+      { name: 'iOS', description: variants[0]?.node?.title, variantId: variants[0]?.node?.id || "iOS variant not found."},
+      { name: 'Android', description: variants[1]?.node?.title, variantId:variants[1]?.node?.id || 'Android varaitn not found.'},
     ],
   }
   const [selectedQty, setSelectedQty] = useState(1)
@@ -67,10 +68,13 @@ export default function ProductOverview({images, title, description, price,varia
     e.preventDefault()
     const indexOfVariant = productVariants.connectorType.findIndex(cable => cable.name === `${selectedCable}`)
 
-    // TODO if variable returns a number other than -1 (Meaning no value was found), query to shopify
+    // TODO if variable returns a number other than -1 (Meaning connector type selected was valid), query to shopify
     if(indexOfVariant != -1){
       const cartId = JSON.parse(window.localStorage.getItem('bula-cart'))
       const {status,message} = await addToCart(cartId[0].id, JSON.parse(selectedQty) , productVariants.connectorType[indexOfVariant].variantId)
+
+      
+      // TODO, display validate data receieved
       if(status === 200){
         const {cart} = await viewCart(message.cartLinesAdd.cart.id)
         setUserCart(cart)
